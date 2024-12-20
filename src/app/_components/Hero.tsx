@@ -5,9 +5,9 @@ import React from "react";
 const Hero = () => {
   return (
     <div className="min-h-[720px] px-8 py-16 md:px-16 lg:px-32">
-      <div className="flex size-full min-h-[512px] flex-col items-start p-16 text-left justify-center text-white bg-blue-700">
+      <div className="flex size-full min-h-[512px] flex-col items-start p-16 text-left justify-center rounded-2xl text-white bg-gradient-to-br to-blue-500 from-blue-700">
         <div className="w-2/3">
-        <h3>
+        <h3 className="text-yellow-400">
           Providing Full-Stack Development, Web Design & Branding Solutions for
           an Effective Digital Experience
         </h3>
@@ -16,7 +16,7 @@ const Hero = () => {
           </p>
         </div>
         <div>
-          <Button variant={"gooeyRight"} className="bg-white text-blue-700 px-8 py-6 mt-8 rounded-lg">
+          <Button variant={"gooeyLeft"} className="bg-white from-blue-200 text-blue-700 px-8 py-6 mt-8 rounded-lg">
             Get Started
           </Button>
         </div>
