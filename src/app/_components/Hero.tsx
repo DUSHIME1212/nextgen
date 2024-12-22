@@ -199,7 +199,7 @@ const Hero = () => {
               }
             </div>
             <div className="w-full flex flex-col items-start justify-start gap-4">
-              <Link href={""} className="text-center text-base mt-4 w-full">@Nextgen2025</Link>
+              <Link href={""} className="text-center text-base mt-4 w-full">@igor_wlrd</Link>
               <p className="text-center w-full">DESIGNED BY <span className="text-blue-700 font-bold">@__matt360</span> DEVELOPED BY  <span className="text-blue-700 font-bold">Nextgen</span></p>
 
             </div>
