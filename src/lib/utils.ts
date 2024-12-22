@@ -69,5 +69,27 @@ export const perks  = [
   {
     quote:"Each of your designs is made especially for you and is 100% yours."
   },
+]
 
+export const questions = [
+  {
+    question: "What is Nextgen?",
+    answer: "Nextgen is a cutting-edge technology company that provides innovative solutions for businesses and individuals."
+  },
+  {
+    question: "What services does Nextgen offer?",
+    answer: "Nextgen offers a wide range of services including web development, design, and marketing solutions."
+  },
+  {
+    question: "How does Nextgen's design process work?",
+    answer: "Our design process involves a collaborative approach with our clients to understand their needs and deliver tailored solutions."
+  },
+  {
+    question: "What is the typical turnaround time for a project?",
+    answer: "The turnaround time for a project varies depending on the complexity and scope, but we strive to deliver high-quality results within a timely manner."
+  },
+  {
+    question: "Does Nextgen offer any guarantees or warranties?",
+    answer: "Yes, we offer a satisfaction guarantee and warranty on all our services to ensure our clients are completely satisfied with the results."
+  }
 ]

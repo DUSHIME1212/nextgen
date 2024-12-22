@@ -1,13 +1,19 @@
 import { Button } from "@/components/ui/button";
-import { perks } from "@/lib/utils";
-import { Check, Plus } from "lucide-react";
+import { perks, questions } from "@/lib/utils";
+import { Check, FacebookIcon, InstagramIcon, LinkedinIcon, Plus, TwitchIcon, TwitterIcon } from "lucide-react";
 import Link from "next/link";
 import React from "react";
 import { MdEventAvailable } from "react-icons/md";
 import { RiBuilding2Fill, RiSpaceShipFill } from "react-icons/ri";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 const Hero = () => {
- const packages = [
+  const packages = [
     {
       title: "Start-Ups",
       description:
@@ -36,6 +42,25 @@ const Hero = () => {
       icon: <MdEventAvailable />,
     },
   ];
+  const footerlinks = [
+    {
+      href:"/",
+      icon:<InstagramIcon/>,
+    },
+    {
+      href:"/",
+      icon:<FacebookIcon/>,
+    },
+    {
+      href:"/",
+      icon:<LinkedinIcon/>,
+    },
+    {
+      href:"/",
+      icon:<TwitterIcon/>,
+    },
+    
+  ]
 
   return (
     <>
@@ -88,7 +113,7 @@ const Hero = () => {
           ))}
         </div>
       </div>
-      <div className="iitems-center flex min-h-screen flex-col items-center justify-center px-8 py-16 md:px-16 lg:px-32">
+      <div className="iitems-center flex min-h-fit flex-col items-center justify-center px-8 py-16 md:px-16 lg:px-32">
         <h1 className="mb-16 w-1/3 text-center text-4xl">
           Packages Designed Specifically for Your Business Needs
         </h1>
@@ -118,30 +143,67 @@ const Hero = () => {
         </div>
       </div>
 
-      <div className="iitems-center flex min-h-screen flex-col items-center justify-center px-8 py-16 md:px-16 lg:px-32">
+      <div className="iitems-center flex min-h-fit flex-col items-center justify-center px-8 py-16 md:px-16 lg:px-32">
         <h1 className="mb-16 w-1/3 text-center text-4xl">
           Full of Perks You Won’t Find Anywhere Else
         </h1>
         <div className="grid grid-rows-1 gap-4">
           {perks.map((item, index) => (
-            <div key={index} className="flex flex-row items-start justify-center gap-4">
+            <div
+              key={index}
+              className="flex flex-row items-start justify-center gap-4"
+            >
               <Check className="size-6 text-blue-700" />
               <p>{item.quote}</p>
             </div>
           ))}
         </div>
       </div>
-      <div className="iitems-center flex min-h-screen flex-col items-center justify-center px-8 py-16 md:px-16 lg:px-32">
-        <h1 className="mb-16 w-1/3 text-center text-4xl">
-          Full of Perks You Won’t Find Anywhere Else
-        </h1>
-        <div className="grid grid-rows-1 gap-4">
-          {perks.map((item, index) => (
-            <div key={index} className="flex flex-row items-start justify-center gap-4">
-              <Check className="size-6 text-blue-700" />
-              <p>{item.quote}</p>
+      <div className="iitems-center flex min-h-fit flex-row items-start justify-center bg-blue-700 px-8 py-16 text-white md:px-16 lg:px-32">
+        <div className="flex w-full flex-col items-start justify-start p-8 md:w-1/3">
+          <h1 className="mb-4 text-7xl text-yellow-500">How it Works</h1>
+          <p>Subscribe now, Get your website design Tomorrow!</p>
+        </div>
+        <div className="grid w-full grid-rows-1 gap-4 md:w-2/3">
+          <Accordion type="single" collapsible>
+            {questions.map((item, index) => (
+              <AccordionItem
+                key={index}
+                value={`item-${index + 1}`}
+                className="border-none"
+              >
+                <AccordionTrigger className="justify-between text-2xl hover:no-underline">
+                  {item.question}
+                </AccordionTrigger>
+                <AccordionContent className="text-xl opacity-70">
+                  {item.answer}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </div>
+      </div>
+      <div className="flex min-h-fit w-full flex-row items-center justify-start px-8 py-16 md:px-16 lg:px-32">
+        <div className="grid w-full grid-cols-4 justify-start relative rounded-2xl bg-blue-200 p-8 md:min-h-[256px]">
+          <div className="col-span-1 h-full p-4">
+            <h1 className="mb-4 text-4xl text-blue-700">Get Started Today</h1>
+            <p>Subscribe now, Get your website design Tomorrow!</p>
+          </div>
+          <div className="col-span-2 h-full p-4">
+            <div className="flex flex-row items-center justify-center gap-4 text-gray-700">
+              {
+                footerlinks.map((link, index) => (
+                  <Link href={link.href} key={index}>
+                    {link.icon}
+                  </Link>))
+              }
             </div>
-          ))}
+            <div className="w-full flex flex-col items-start justify-start gap-4">
+              <Link href={""} className="text-center text-base mt-4 w-full">@Nextgen2025</Link>
+              <p className="text-center w-full">DESIGNED BY <span className="text-blue-700 font-bold">@__matt360</span> DEVELOPED BY  <span className="text-blue-700 font-bold">Nextgen</span></p>
+
+            </div>
+          </div>
         </div>
       </div>
     </>
