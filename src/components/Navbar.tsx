@@ -6,7 +6,7 @@ import Image from 'next/image'
 
 const Navbar = () => {
   return (
-    <nav className='flex px-8 md:px-16 lg:px-32 w-full py-4 shadow-2xl shadow-blue-500/20 justify-between items-center'>
+    <nav className='flex fixed bg-white z-50 px-8 md:px-16 lg:px-32 w-full py-4 shadow-2xl shadow-blue-500/20 justify-between items-center'>
         <Link href={""} className='flex items-center gap-2 text-2xl font-bold'>
             <div className='size-8 relative'>
                 <Image src="/logo.png" alt="Logo" className='object-contain' fill/>
