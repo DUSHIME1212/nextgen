@@ -1,3 +1,5 @@
+"use client"
+
 import { Button } from "@/components/ui/button";
 import { perks, questions } from "@/lib/utils";
 import { Check, FacebookIcon, InstagramIcon, LinkedinIcon, Plus, TwitchIcon, TwitterIcon } from "lucide-react";
@@ -11,8 +13,51 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { FaPinterestP, FaXTwitter } from "react-icons/fa6";
+import { TiSocialFacebook } from "react-icons/ti";
+import { IoLogoLinkedin } from "react-icons/io5";
+import { gsap } from "gsap"
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger"
+import { useGSAP } from "@gsap/react"
+gsap.registerPlugin(ScrollTrigger)
 
 const Hero = () => {
+  useGSAP(() => {
+    gsap.from("h1" , {
+      opacity: 0,
+      y: 100,
+      duration: 1,
+      scrollTrigger: {
+        trigger: "h1",
+        start: "top 80%",
+        end: "bottom 60%",
+      }
+    })
+    gsap.from("p" , {
+      opacity: 0,
+      y: 100,
+      duration: 1,
+      scrollTrigger: {
+        trigger: "p",
+        start: "top 80%",
+        end: "bottom 60%",
+      }
+    })
+    gsap.from(".div" , {
+      opacity: 0,
+      y: 100,
+      duration: 1,
+      stagger: 0.5,
+      scrollTrigger: {
+        trigger: ".div",
+        start: "top 80%",
+        end: "bottom 60%",
+        scrub: 1
+      }
+    })
+  })
+  
+  
   const packages = [
     {
       title: "Start-Ups",
@@ -45,19 +90,19 @@ const Hero = () => {
   const footerlinks = [
     {
       href:"/",
-      icon:<InstagramIcon/>,
+      icon:<TiSocialFacebook />,
     },
     {
       href:"/",
-      icon:<FacebookIcon/>,
+      icon:<FaPinterestP />,
     },
     {
       href:"/",
-      icon:<LinkedinIcon/>,
+      icon:<IoLogoLinkedin />,
     },
     {
       href:"/",
-      icon:<TwitterIcon/>,
+      icon:<FaXTwitter />,
     },
     
   ]
@@ -65,14 +110,14 @@ const Hero = () => {
   return (
     <>
       {/* first */}
-      <div className="grid min-h-screen place-items-center px-8 py-16 md:px-16 lg:px-32">
-        <div className="flex size-full max-h-[512px] flex-col items-start justify-center rounded-2xl bg-gradient-to-br from-blue-700 to-blue-500 p-16 text-left text-white">
-          <div className="w-2/3">
-            <h3 className="text-yellow-400">
+      <div className="grid pt-32 md:min-h-screen place-items-center px-8 py-16 md:px-16 lg:px-32">
+        <div className="flex size-full h-fit  min-h-[512px] flex-col items-start justify-center rounded-2xl bg-gradient-to-br from-blue-700 to-blue-500 p-16 text-left text-white">
+          <div className="md:w-2/3">
+            <h3 className="text-yellow-400 max-md:text-2xl">
               Providing Full-Stack Development, Web Design & Branding Solutions
               for an Effective Digital Experience
             </h3>
-            <p className="pt-4 text-lg opacity-80">
+            <p className="pt-4 text-lg max-md:text-base opacity-80">
               We offer exclusive packages that provide you with access to
               creative and technical solutions tailored to your business needs.
               Simple, reliable, and affordable – we’re here to take your digital
@@ -91,14 +136,14 @@ const Hero = () => {
       </div>
       {/* second */}
       <div className="iitems-center flex min-h-screen flex-col items-center justify-center px-8 py-16 md:px-16 lg:px-32">
-        <h1 className="mb-16 w-2/3 text-center">
+        <h1 className="mb-16 w-full md:w-2/3 text-center">
           Our Featured Branding projects
         </h1>
         <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
           {[1, 2, 3].map((item, index) => (
             <div
               key={index}
-              className="relative flex flex-col items-center justify-center rounded-lg bg-yellow-200 p-8"
+              className="relative div flex flex-col items-center justify-center rounded-lg bg-yellow-200 p-8"
             >
               <div className="relative h-72 w-full rounded-2xl bg-gray-300"></div>
               <Link href={""}>
@@ -114,14 +159,14 @@ const Hero = () => {
         </div>
       </div>
       <div className="iitems-center flex min-h-fit flex-col items-center justify-center px-8 py-16 md:px-16 lg:px-32">
-        <h1 className="mb-16 w-1/3 text-center text-4xl">
+        <h1 className="mb-16 w-full md:w-1/3 text-center text-4xl">
           Packages Designed Specifically for Your Business Needs
         </h1>
         <div className="grid grid-cols-1 md:grid-cols-3">
           {packages.map((item, index) => (
             <div
               key={index}
-              className={`relative flex flex-col items-start justify-center rounded-lg p-8 ${item.bg} ${item.color}`}
+              className={`relative flex flex-col div items-start justify-center rounded-lg p-8 ${item.bg} ${item.color}`}
             >
               <div className="flex flex-row items-center gap-2">
                 <div className="rounded-2xl bg-white/10 p-4 shadow-md">
@@ -144,7 +189,7 @@ const Hero = () => {
       </div>
 
       <div className="iitems-center flex min-h-fit flex-col items-center justify-center px-8 py-16 md:px-16 lg:px-32">
-        <h1 className="mb-16 w-1/3 text-center text-4xl">
+        <h1 className="mb-16 w-full md:w-1/3 text-center text-4xl">
           Full of Perks You Won’t Find Anywhere Else
         </h1>
         <div className="grid grid-rows-1 gap-4">
@@ -159,8 +204,8 @@ const Hero = () => {
           ))}
         </div>
       </div>
-      <div className="iitems-center flex min-h-fit flex-row items-start justify-center bg-blue-700 px-8 py-16 text-white md:px-16 lg:px-32">
-        <div className="flex w-full flex-col items-start justify-start p-8 md:w-1/3">
+      <div className="iitems-center flex min-h-fit flex-col md:flex-row items-start justify-center bg-blue-700 px-8 py-16 text-white md:px-16 lg:px-32">
+        <div className="flex w-full flex-col md:flex-col items-start justify-start p-8 md:w-1/3">
           <h1 className="mb-4 text-7xl text-yellow-500">How it Works</h1>
           <p>Subscribe now, Get your website design Tomorrow!</p>
         </div>
@@ -184,8 +229,8 @@ const Hero = () => {
         </div>
       </div>
       <div className="flex min-h-fit w-full flex-row items-center justify-start px-8 py-16 md:px-16 lg:px-32">
-        <div className="grid w-full grid-cols-4 justify-start relative rounded-2xl bg-blue-200 p-8 md:min-h-[256px]">
-          <div className="col-span-1 h-full p-4">
+        <div className="grid w-full grid-cols-1 md:grid-cols-4 justify-start relative rounded-2xl bg-blue-200 p-8 md:min-h-[256px]">
+          <div className="col-span-1 flex md:flex-col h-full p-4">
             <h1 className="mb-4 text-4xl text-blue-700">Get Started Today</h1>
             <p>Subscribe now, Get your website design Tomorrow!</p>
           </div>
