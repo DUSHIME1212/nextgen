@@ -10,7 +10,7 @@ export function cn(...inputs: ClassValue[]) {
 
 export const navlinks = [
   { label: "Home", href: "/" },
-  { label: "About", href: "/" },
+  { label: "About", href: "/about" },
   { label: "Services", href: "/" },
   { label: "Our works", href: "/" },
   { label: "Resources", href: "/" },
@@ -18,37 +18,12 @@ export const navlinks = [
 
 ]
 
-// export const packages = [
-
-
-//     {
-//       title: "Start-Ups",
-//       description:
-//         "Launch your startup with a cutting-edge web presence, ensuring your digital footprint extends beyond just a logo. From web applications to scalable backend solutions, we’ve got you covered.",
-//       bg: "bg-blue-200",
-//       color: "text-blue-700",
-//       link: "/",
-//       icon: <RiSpaceShipFill />,
-//     },
-//     {
-//       title: "Businesses",
-//       description:
-//         "Elevate your business with a trusted partner dedicated to fulfilling your technical, design, and marketing needs. Build fast, secure, and responsive platforms to boost efficiency and growth.",
-//       bg: "bg-yellow-200",
-//       color: "text-blue-700",
-//       link: "/",
-//       icon: <RiBuilding2Fill />,
-//     },
-//     {
-//       title: "Event Organizers",
-//       description:
-//         "Transform your events with our package tailored exclusively for event organizers. From event websites to real-time ticketing systems, we ensure a seamless online experience.",
-//       bg: "bg-gray-200",
-//       color: "text-blue-700",
-//       link: "/",
-//       icon: <MdEventAvailable />,
-//     },
-//   ];
+export const blogExample = {
+  title: "Blog Example",
+  date: "2023-02-20",
+  description: "This is a blog post example",
+  image: "https://i.pinimg.com/736x/66/df/e6/66dfe6d601c963df732db1b68c3f44a6.jpg",
+}
 
 export const perks  = [
   {

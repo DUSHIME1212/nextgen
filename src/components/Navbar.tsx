@@ -16,7 +16,7 @@ const Navbar = () => {
   useGSAP(() => {
     gsap.from(".links", {
       opacity: 0,
-      y: "-100px",
+      x: "-100px",
       duration: 1,
       ease: "power2.inOut",
       filter: "blur(10px)",

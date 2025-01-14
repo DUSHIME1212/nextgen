@@ -1,8 +1,16 @@
-"use client"
+"use client";
 
 import { Button } from "@/components/ui/button";
-import { perks, questions } from "@/lib/utils";
-import { Check, FacebookIcon, InstagramIcon, LinkedinIcon, Plus, TwitchIcon, TwitterIcon } from "lucide-react";
+import { blogExample, perks, questions } from "@/lib/utils";
+import {
+  Check,
+  FacebookIcon,
+  InstagramIcon,
+  LinkedinIcon,
+  Plus,
+  TwitchIcon,
+  TwitterIcon,
+} from "lucide-react";
 import Link from "next/link";
 import React from "react";
 import { MdEventAvailable } from "react-icons/md";
@@ -16,14 +24,16 @@ import {
 import { FaPinterestP, FaXTwitter } from "react-icons/fa6";
 import { TiSocialFacebook } from "react-icons/ti";
 import { IoLogoLinkedin } from "react-icons/io5";
-import { gsap } from "gsap"
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger"
-import { useGSAP } from "@gsap/react"
-gsap.registerPlugin(ScrollTrigger)
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
+import { Animatepara } from "@/lib/Animation";
+import Image from "next/image";
+gsap.registerPlugin(ScrollTrigger);
 
 const Hero = () => {
   useGSAP(() => {
-    gsap.from("h1" , {
+    gsap.from(".h1", {
       opacity: 0,
       y: 100,
       duration: 1,
@@ -31,19 +41,10 @@ const Hero = () => {
         trigger: "h1",
         start: "top 80%",
         end: "bottom 60%",
-      }
-    })
-    gsap.from("p" , {
-      opacity: 0,
-      y: 100,
-      duration: 1,
-      scrollTrigger: {
-        trigger: "p",
-        start: "top 80%",
-        end: "bottom 60%",
-      }
-    })
-    gsap.from(".div" , {
+      },
+    });
+
+    gsap.from(".div", {
       opacity: 0,
       y: 100,
       duration: 1,
@@ -52,12 +53,11 @@ const Hero = () => {
         trigger: ".div",
         start: "top 80%",
         end: "bottom 60%",
-        scrub: 1
-      }
-    })
-  })
-  
-  
+        scrub: 1,
+      },
+    });
+  });
+
   const packages = [
     {
       title: "Start-Ups",
@@ -89,40 +89,41 @@ const Hero = () => {
   ];
   const footerlinks = [
     {
-      href:"/",
-      icon:<TiSocialFacebook />,
+      href: "/",
+      icon: <TiSocialFacebook />,
     },
     {
-      href:"/",
-      icon:<FaPinterestP />,
+      href: "/",
+      icon: <FaPinterestP />,
     },
     {
-      href:"/",
-      icon:<IoLogoLinkedin />,
+      href: "/",
+      icon: <IoLogoLinkedin />,
     },
     {
-      href:"/",
-      icon:<FaXTwitter />,
+      href: "/",
+      icon: <FaXTwitter />,
     },
-    
-  ]
+  ];
 
   return (
     <>
       {/* first */}
-      <div className="grid pt-32 md:min-h-screen place-items-center px-8 py-16 md:px-16 lg:px-32">
-        <div className="flex size-full h-fit  min-h-[512px] flex-col items-start justify-center rounded-2xl bg-gradient-to-br from-blue-700 to-blue-500 p-16 text-left text-white">
-          <div className="md:w-2/3">
+      <div className="grid place-items-center md:min-h-screen">
+        <div className="flex size-full h-screen flex-col items-start justify-center rounded-2xl relative p-16 px-8 text-left text-white md:px-16 lg:px-32">
+          <Image src={"https://pbs.twimg.com/media/GedOxpSaEAAMnK3?format=jpg&name=large"} alt="" className="object-cover z-0" fill />
+          <div className="bg-gradient-to-br absolute size-full left-0 from-blue-700/20 to-blue-500" />
+          <div className="md:w-2/3 z-10">
             <h3 className="text-yellow-400 max-md:text-2xl">
               Providing Full-Stack Development, Web Design & Branding Solutions
               for an Effective Digital Experience
             </h3>
-            <p className="pt-4 text-lg max-md:text-base opacity-80">
+            <Animatepara className="pt-4 text-lg opacity-80 max-md:text-base">
               We offer exclusive packages that provide you with access to
               creative and technical solutions tailored to your business needs.
               Simple, reliable, and affordable – we’re here to take your digital
               presence to the next level.
-            </p>
+            </Animatepara>
           </div>
           <div>
             <Button
@@ -135,15 +136,15 @@ const Hero = () => {
         </div>
       </div>
       {/* second */}
-      <div className="iitems-center flex min-h-screen flex-col items-center justify-center px-8 py-16 md:px-16 lg:px-32">
-        <h1 className="mb-16 w-full md:w-2/3 text-center">
+      <div className="iitems-center flex min-h-screen flex-col items-center justify-center px-8 py-16 md:px-16">
+        <h1 className="mb-16 w-full text-center md:w-2/3">
           Our Featured Branding projects
         </h1>
         <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
           {[1, 2, 3].map((item, index) => (
             <div
               key={index}
-              className="relative div flex flex-col items-center justify-center rounded-lg bg-yellow-200 p-8"
+              className="div relative flex flex-col items-center justify-center rounded-lg bg-yellow-200 p-8"
             >
               <div className="relative h-72 w-full rounded-2xl bg-gray-300"></div>
               <Link href={""}>
@@ -158,15 +159,15 @@ const Hero = () => {
           ))}
         </div>
       </div>
-      <div className="iitems-center flex min-h-fit flex-col items-center justify-center px-8 py-16 md:px-16 lg:px-32">
-        <h1 className="mb-16 w-full md:w-1/3 text-center text-4xl">
+      <div className="iitems-center flex min-h-fit flex-col items-center justify-center px-8 py-16 md:px-16">
+        <h1 className="mb-16 w-full text-center text-4xl md:w-1/3">
           Packages Designed Specifically for Your Business Needs
         </h1>
         <div className="grid grid-cols-1 md:grid-cols-3">
           {packages.map((item, index) => (
             <div
               key={index}
-              className={`relative flex flex-col div items-start justify-center rounded-lg p-8 ${item.bg} ${item.color}`}
+              className={`div relative flex flex-col items-start justify-center rounded-lg p-8 ${item.bg} ${item.color}`}
             >
               <div className="flex flex-row items-center gap-2">
                 <div className="rounded-2xl bg-white/10 p-4 shadow-md">
@@ -187,9 +188,9 @@ const Hero = () => {
           ))}
         </div>
       </div>
-
-      <div className="iitems-center flex min-h-fit flex-col items-center justify-center px-8 py-16 md:px-16 lg:px-32">
-        <h1 className="mb-16 w-full md:w-1/3 text-center text-4xl">
+      {/* this is perks */}
+      <div className="flex min-h-fit flex-col items-center justify-center px-8 py-16 md:px-16">
+        <h1 className="mb-16 w-full text-center text-4xl md:w-1/3">
           Full of Perks You Won’t Find Anywhere Else
         </h1>
         <div className="grid grid-rows-1 gap-4">
@@ -204,8 +205,9 @@ const Hero = () => {
           ))}
         </div>
       </div>
-      <div className="iitems-center flex min-h-fit flex-col md:flex-row items-start justify-center bg-blue-700 px-8 py-16 text-white md:px-16 lg:px-32">
-        <div className="flex w-full flex-col md:flex-col items-start justify-start p-8 md:w-1/3">
+      {/* this is qa */}
+      <div className="flex min-h-fit flex-col items-start justify-center bg-blue-100 px-8 py-16 md:flex-row md:px-16">
+        <div className="flex w-full flex-col items-start justify-start p-8 md:w-1/3 md:flex-col">
           <h1 className="mb-4 text-7xl text-yellow-500">How it Works</h1>
           <p>Subscribe now, Get your website design Tomorrow!</p>
         </div>
@@ -228,27 +230,35 @@ const Hero = () => {
           </Accordion>
         </div>
       </div>
-      <div className="flex min-h-fit w-full flex-row items-center justify-start px-8 py-16 md:px-16 lg:px-32">
-        <div className="grid w-full grid-cols-1 md:grid-cols-4 justify-start relative rounded-2xl bg-blue-200 p-8 md:min-h-[256px]">
-          <div className="col-span-1 flex md:flex-col h-full p-4">
-            <h1 className="mb-4 text-4xl text-blue-700">Get Started Today</h1>
-            <p>Subscribe now, Get your website design Tomorrow!</p>
-          </div>
-          <div className="col-span-2 h-full p-4">
-            <div className="flex flex-row items-center justify-center gap-4 text-gray-700">
-              {
-                footerlinks.map((link, index) => (
-                  <Link href={link.href} key={index}>
-                    {link.icon}
-                  </Link>))
-              }
+      <div className="flex min-h-fit flex-col items-start justify-center px-8 py-16 md:px-16">
+        <div className="flex w-2/3 flex-col items-start text-start">
+          <h1 className="mb-4 w-full text-start md:w-1/3">Blog</h1>
+          <p className="w-full lg:w-2/3">
+            Stay updated with the latest news, feature releases, and insights in
+            the cybersecurity and infrastructure by reading Nextgen blog.
+          </p>
+        </div>
+        <div className="mt-8 grid w-full grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+          {[1, 2, 3].map(() => (
+            <div
+              key={Math.random()}
+              className="bg-blue- group relative flex flex-col items-start gap-4 overflow-clip text-center duration-700"
+            >
+              <div className="relative min-h-72 w-full">
+                <Image
+                  src={blogExample.image}
+                  alt=""
+                  className="object-cover"
+                  fill
+                />
+              </div>
+              <div className="absolute left-1/2 top-1/2 -z-10 size-4 -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-100 duration-700 group-hover:size-[720px]"></div>
+              <div className="px-8 p-4 text-start">
+              <h1 className="text-2xl">{blogExample.title}</h1>
+              <p>{blogExample.description}</p>
+              </div>
             </div>
-            <div className="w-full flex flex-col items-start justify-start gap-4">
-              <Link href={""} className="text-center text-base mt-4 w-full">@igor_wlrd</Link>
-              <p className="text-center w-full">DESIGNED BY <span className="text-blue-700 font-bold">@__matt360</span> DEVELOPED BY  <span className="text-blue-700 font-bold">Nextgen</span></p>
-
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </>
