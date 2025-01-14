@@ -39,7 +39,7 @@ const page = () => {
                                 Learn More
                             </Button>
                         </div>
-                        <div className="min-h-56 hidden group-hover:flex duration-700">
+                        <div className="min-h-56 duration-700">
                             <ul className="flex flex-col justify-start gap-4 h-full">
                                 <li className="text-sm text-gray-500">Brand Positioning</li>
                                 <li className="text-sm text-gray-500">Brand Messaging</li>
