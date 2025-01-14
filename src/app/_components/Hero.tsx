@@ -242,7 +242,7 @@ const Hero = () => {
           {[1, 2, 3].map(() => (
             <div
               key={Math.random()}
-              className="bg-blue- group relative flex flex-col items-start gap-4 overflow-clip text-center duration-700"
+              className="bg-blue- group relative flex flex-col hover:shadow-2xl shadow-blue-700 items-start gap-4 overflow-clip text-center duration-700"
             >
               <div className="relative min-h-72 w-full">
                 <Image

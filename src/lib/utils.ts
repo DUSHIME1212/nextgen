@@ -1,8 +1,7 @@
 import { clsx, type ClassValue } from "clsx"
 import { twMerge } from "tailwind-merge"
 
-import { MdEventAvailable } from "react-icons/md";
-import { RiBuilding2Fill, RiSpaceShipFill } from "react-icons/ri";
+
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
@@ -11,7 +10,7 @@ export function cn(...inputs: ClassValue[]) {
 export const navlinks = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
-  { label: "Services", href: "/" },
+  { label: "Services", href: "/services" },
   { label: "Our works", href: "/" },
   { label: "Resources", href: "/" },
   { label: "Blog", href: "/" },

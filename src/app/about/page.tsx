@@ -1,6 +1,5 @@
 import { Button } from "@/components/ui/button";
 import { Animatepara } from "@/lib/Animation";
-import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import React from "react";
 
@@ -9,10 +8,10 @@ const page = () => {
     <>
       <div className="min-h-20" />
       <div className="flex min-h-screen flex-col items-center justify-center">
-        <div className="grid min-h-screen grid-cols-2">
-          <div className="flex flex-col justify-center gap-4 md:px-32">
+        <div className="grid min-h-screen grid-cols-1 md:grid-cols-2">
+          <div className="flex flex-col justify-center gap-4 px-8 md:px-32">
             <h2 className="text-blue-700">We are the bridge between the company and the customers</h2>
-            <p>
+            <Animatepara>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum,
               laudantium maiores quos numquam dolorem, corrupti velit odit saepe
               asperiores at rem iusto minus delectus? Autem magnam cumque
@@ -20,24 +19,24 @@ const page = () => {
               quod numquam, error molestiae laboriosam mollitia fugiat quidem
               quo reiciendis recusandae quia alias ipsum? Deserunt modi minus
               aspernatur architecto qui vel eum possimus cum quae numquam?
-            </p>
+            </Animatepara>
           </div>
-          <div className="relative">
+          <div className="relative max-md:mt-8 max-md:min-h-72">
             <Image
               src={
                 "https://pbs.twimg.com/media/Ggm5KSbW0AAHASx?format=jpg&name=large"
               }
               alt=""
               fill
-              className="object-cover"
+              className="object-cover "
             />
           </div>
         </div>
         <div className="min-h-fit w-full p-8 md:px-16">
           <hr className="my-12 border border-black/20" />
-          <div className="grid grid-cols-1 px-16 md:grid-cols-2">
+          <div className="grid grid-cols-1  md:px-16 md:grid-cols-2">
             <h1 className="text-blue-700">Together we are strong</h1>
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-4 ">
               <h6>
                 Our crew is always getting bigger, but we all work toward one
                 goal: to make sales success not only possible but inevitable for
@@ -63,7 +62,7 @@ const page = () => {
           </div>
         </div>
         <div className="min-h-fit w-full p-8 md:px-16">
-          <div className="grid grid-cols-1 px-16 md:grid-cols-2">
+          <div className="grid grid-cols-1 md:px-16 md:grid-cols-2">
             <div className="flex h-fit items-center gap-4">
               <img
                 src="https://media.licdn.com/dms/image/v2/D4E03AQG6ahyWtnP_GA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1693212032366?e=1742428800&v=beta&t=fHKlZFufBhca6aHrZWulDRjeN-FcMqiUOeuwj99NFXw"
@@ -116,7 +115,7 @@ const page = () => {
           </div>
           <hr className="my-8 border-2 border-black/20" />
           <div>
-            <div className="grid grid-cols-1 px-16 md:grid-cols-2">
+            <div className="grid grid-cols-1 md:px-16 md:grid-cols-2">
               <h1 className="text-blue-700">Join our team</h1>
               <div className="flex flex-col gap-4">
                 <h6>
