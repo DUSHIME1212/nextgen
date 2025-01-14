@@ -1,10 +1,8 @@
-import { GithubIcon } from "lucide-react";
+
 import Link from "next/link";
 import React from "react";
 import { BsSlack, BsTwitterX } from "react-icons/bs";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa6";
-import { LiaLinkedin } from "react-icons/lia";
-
 const Footer = () => {
   return (
     <div className="flex min-h-fit w-full flex-col items-center bg-blue-700 text-white justify-start px-8 py-8 md:px-16">

@@ -4,12 +4,7 @@ import { Button } from "@/components/ui/button";
 import { blogExample, perks, questions } from "@/lib/utils";
 import {
   Check,
-  FacebookIcon,
-  InstagramIcon,
-  LinkedinIcon,
   Plus,
-  TwitchIcon,
-  TwitterIcon,
 } from "lucide-react";
 import Link from "next/link";
 import React from "react";
@@ -21,9 +16,6 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { FaPinterestP, FaXTwitter } from "react-icons/fa6";
-import { TiSocialFacebook } from "react-icons/ti";
-import { IoLogoLinkedin } from "react-icons/io5";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
@@ -87,24 +79,7 @@ const Hero = () => {
       icon: <MdEventAvailable />,
     },
   ];
-  const footerlinks = [
-    {
-      href: "/",
-      icon: <TiSocialFacebook />,
-    },
-    {
-      href: "/",
-      icon: <FaPinterestP />,
-    },
-    {
-      href: "/",
-      icon: <IoLogoLinkedin />,
-    },
-    {
-      href: "/",
-      icon: <FaXTwitter />,
-    },
-  ];
+
 
   return (
     <>
