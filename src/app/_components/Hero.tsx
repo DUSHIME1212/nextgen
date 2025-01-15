@@ -182,8 +182,8 @@ const Hero = () => {
       </div>
       {/* this is qa */}
       <div className="flex min-h-fit flex-col items-start justify-center bg-blue-100 px-8 py-16 md:flex-row md:px-16">
-        <div className="flex w-full flex-col items-start justify-start p-8 md:w-1/3 md:flex-col">
-          <h1 className="mb-4 text-7xl text-yellow-500">How it Works</h1>
+        <div className="flex w-full flex-col items-start justify-start md:p-8 mb-8 md:w-1/3 md:flex-col">
+          <h1 className="mb-4 text-yellow-500">How it Works</h1>
           <p>Subscribe now, Get your website design Tomorrow!</p>
         </div>
         <div className="grid w-full grid-rows-1 gap-4 md:w-2/3">

@@ -35,7 +35,7 @@ const page = () => {
         <div className="min-h-fit w-full p-8 md:px-16">
           <hr className="my-12 border border-black/20" />
           <div className="grid grid-cols-1  md:px-16 md:grid-cols-2">
-            <h1 className="text-blue-700">Together we are strong</h1>
+            <h1 className="text-blue-700 md:w-2/3">Together we are strong</h1>
             <div className="flex flex-col gap-4 ">
               <h6>
                 Our crew is always getting bigger, but we all work toward one
@@ -61,7 +61,7 @@ const page = () => {
             </div>
           </div>
         </div>
-        <div className="min-h-fit w-full p-8 md:px-16">
+        <div className="min-h-fit w-full p-8  md:px-16">
           <div className="grid grid-cols-1 md:px-16 md:grid-cols-2">
             <div className="flex h-fit items-center gap-4">
               <img
@@ -81,7 +81,7 @@ const page = () => {
             </h2>
           </div>
         </div>
-        <div className="min-h-fit w-full p-8 md:px-16">
+        <div className="min-h-fit w-full p-8 bg-gradient-to-tr from-blue-500 to-blue-700 py-16 text-white md:px-16">
           <div className="grid w-full grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
             {/*Team members cards */}
             <div className="flex min-h-96 flex-col gap-4">
@@ -113,9 +113,11 @@ const page = () => {
               <p>CEO & Full-stack developer</p>
             </div>
           </div>
-          <hr className="my-8 border-2 border-black/20" />
+          
+        </div>
+        <hr className="my-8 border-2 border-black/20" />
           <div>
-            <div className="grid grid-cols-1 md:px-16 md:grid-cols-2">
+            <div className="grid grid-cols-1 md:px-16 py-32 md:grid-cols-2">
               <h1 className="text-blue-700">Join our team</h1>
               <div className="flex flex-col gap-4">
                 <h6>
@@ -130,7 +132,6 @@ const page = () => {
               </div>
             </div>
           </div>
-        </div>
       </div>
     </>
   );

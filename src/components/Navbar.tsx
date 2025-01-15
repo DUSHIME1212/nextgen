@@ -23,9 +23,12 @@ const Navbar = () => {
       stagger:0.2
     });
   });
+
+
+
   return (
     <nav className="fixed z-50 flex w-full items-center justify-between bg-white px-8 py-4 shadow-2xl shadow-blue-500/20 md:px-16 lg:px-32">
-      <Link href={""} className="flex items-center gap-2 text-2xl font-bold">
+      <Link href={"/"} className="flex items-center gap-2 text-2xl font-bold">
         <div className="relative w-8 h-8">
           <Image src="/logo.png" alt="Logo" className="object-contain" fill />
         </div>
@@ -58,7 +61,7 @@ const Navbar = () => {
         </Button>
       </div>
       {open && <div
-        className={`flex w-full flex-col gap-4 absolute top-16 min-h-screen left-0 bg-white p-8 md:flex-row md:items-center`}
+        className={`flex w-full flex-col justify-end gap-4 absolute top-16 min-h-[90vh] left-0 bg-white p-8 md:flex-row md:items-center`}
       >
         {navlinks.map((link, index) => (
           <Link

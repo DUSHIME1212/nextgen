@@ -1,5 +1,15 @@
 import { clsx, type ClassValue } from "clsx"
 import { twMerge } from "tailwind-merge"
+import axios from "axios"
+
+export const api = axios.create({
+  baseURL: process.env.BACKEND_URL,
+  withCredentials:true,
+  headers:{
+    'Content-Type': 'application/json',
+    'Accept': 'application/json'
+  }
+})
 
 
 
@@ -13,7 +23,7 @@ export const navlinks = [
   { label: "Services", href: "/services" },
   { label: "Our works", href: "/" },
   { label: "Resources", href: "/" },
-  { label: "Blog", href: "/" },
+  { label: "Blog", href: "/blog" },
 
 ]
 
