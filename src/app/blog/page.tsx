@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-interface Blog {
+export interface Blog {
   title: string;
   documentId: string;
   slug: string;

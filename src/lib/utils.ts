@@ -1,9 +1,12 @@
 import { clsx, type ClassValue } from "clsx"
 import { twMerge } from "tailwind-merge"
+import { setupCache } from 'axios-cache-interceptor';
 import axios from "axios"
 
+
+
 export const api = axios.create({
-  baseURL: process.env.BACKEND_URL,
+  baseURL: process.env.BACKEND_URL||"https://nextgen-wehy.onrender.com",
   withCredentials:true,
   headers:{
     'Content-Type': 'application/json',

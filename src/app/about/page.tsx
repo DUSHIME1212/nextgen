@@ -1,9 +1,32 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import { Animatepara } from "@/lib/Animation";
+import { api } from "@/lib/utils";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import AnimationScreen from "@/app/_components/AnimationScreen";
+import { setupCache } from 'axios-cache-interceptor';
+
+
 
 const page = () => {
+  const [teams, setTeams] = useState([]);
+  useEffect(() => {
+    try {
+      async function getData() {
+        const res = await api.get("/api/teams?populate=*");
+        setTeams(res.data.data);
+      }
+      getData();
+    } catch (error) {}
+  }, []);
+  console.log(teams);
+
+  if(!teams){
+  return <AnimationScreen />
+}  
   return (
     <>
       <div className="min-h-20" />
@@ -81,37 +104,27 @@ const page = () => {
             </h2>
           </div>
         </div>
-        <div className="min-h-fit w-full p-8 bg-gradient-to-tr from-blue-500 to-blue-700 py-16 text-white md:px-16">
+        <div className="min-h-fit w-full p-8 bg-gradient-to-tr from-blue-500 to-blue-700 py-16 text-white py32 md:px-16">
           <div className="grid w-full grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
             {/*Team members cards */}
-            <div className="flex min-h-96 flex-col gap-4">
-              <div className="relative min-h-96 w-full">
-                <Image
-                  src={
-                    "https://media.licdn.com/dms/image/v2/D4E03AQG6ahyWtnP_GA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1693212032366?e=1742428800&v=beta&t=1npkZBZPkYf1bvOjbyDvVqlqt0_MK8XjFGBChpQQa2M"
-                  }
-                  alt=""
-                  className="object-cover"
-                  fill
-                />
-              </div>
-              <h3>Igor IHIMBAZWE</h3>
-              <p>CEO & Full-stack developer</p>
-            </div>
-            <div className="flex min-h-96 flex-col gap-4">
-              <div className="relative min-h-96 w-full">
-                <Image
-                  src={
-                    "https://media.licdn.com/dms/image/v2/D4D03AQG_xHTiI0XdOg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1730247106450?e=1742428800&v=beta&t=5XolKB7PI3e0R25rxvYwcjKa-I4l_UHA-BWy9cc3q1w"
-                  }
-                  alt=""
-                  className="object-cover"
-                  fill
-                />
-              </div>
-              <h3>DUSHIME Don Aime</h3>
-              <p>CEO & Full-stack developer</p>
-            </div>
+            {
+              teams.map((team: any) => (
+                <div className="min-h-96">
+                  <div className="relative h-96 w-full">
+                    <Image
+                      src={team.profile.url}
+                      alt=""
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                  <div className="flex flex-col border-none gap-4 p-4">
+                    <h2>{team.name}</h2>
+                    <p>{team.position}</p>
+                  </div>
+                </div>
+              ))
+            }
           </div>
           
         </div>

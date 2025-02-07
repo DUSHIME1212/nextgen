@@ -1,13 +1,10 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { blogExample, perks, questions } from "@/lib/utils";
-import {
-  Check,
-  Plus,
-} from "lucide-react";
+import { api, blogExample, perks, questions } from "@/lib/utils";
+import { Check, Plus } from 'lucide-react';
 import Link from "next/link";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { MdEventAvailable } from "react-icons/md";
 import { RiBuilding2Fill, RiSpaceShipFill } from "react-icons/ri";
 import {
@@ -21,7 +18,14 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import { Animatepara } from "@/lib/Animation";
 import Image from "next/image";
+import { date } from "zod";
+import { Blog } from "../blog/page";
+import AnimationScreen from "./AnimationScreen";
 gsap.registerPlugin(ScrollTrigger);
+
+
+
+
 
 const Hero = () => {
   useGSAP(() => {
@@ -80,15 +84,46 @@ const Hero = () => {
     },
   ];
 
+  const [blogData, setBlogData] = useState<Blog[]>([]); 
+
+  useEffect(() => {
+    async function fetchBlogData() {
+      try {
+        const { data } = await api.get("api/blogs?populate=*");
+        // console.log(data);
+        setBlogData(data.data);
+        console.log(blogData);
+        
+        return data;
+
+      } catch (error) {
+        console.error("Error fetching blog data:", error);
+      }
+    }
+
+    fetchBlogData();
+  }, []);
+
+  console.log(blogData);
+  if (!blogData) return <AnimationScreen/>;
+  
+
 
   return (
     <>
+    <AnimationScreen/>
       {/* first */}
       <div className="grid place-items-center md:min-h-screen">
-        <div className="flex size-full h-screen flex-col items-start justify-center rounded-2xl relative p-16 px-8 text-left text-white md:px-16 lg:px-32">
-          <Image src={"https://pbs.twimg.com/media/GedOxpSaEAAMnK3?format=jpg&name=large"} alt="" className="object-cover z-0" fill />
-          <div className="bg-gradient-to-br absolute size-full left-0 from-blue-700/20 to-blue-500" />
-          <div className="md:w-2/3 z-10">
+        <div className="relative flex size-full h-screen flex-col items-start justify-center rounded-2xl p-16 px-8 text-left text-white md:px-16 lg:px-32">
+          <Image
+            src={
+              "https://pbs.twimg.com/media/GedOxpSaEAAMnK3?format=jpg&name=large"}
+            alt=""
+            className="z-0 object-cover"
+            fill
+          />
+          <div className="absolute left-0 size-full bg-gradient-to-br from-blue-700/20 to-blue-500" />
+          <div className="z-10 md:w-2/3">
             <h3 className="text-yellow-400 max-md:text-2xl">
               Providing Full-Stack Development, Web Design & Branding Solutions
               for an Effective Digital Experience
@@ -182,7 +217,7 @@ const Hero = () => {
       </div>
       {/* this is qa */}
       <div className="flex min-h-fit flex-col items-start justify-center bg-blue-100 px-8 py-16 md:flex-row md:px-16">
-        <div className="flex w-full flex-col items-start justify-start md:p-8 mb-8 md:w-1/3 md:flex-col">
+        <div className="mb-8 flex w-full flex-col items-start justify-start md:w-1/3 md:flex-col md:p-8">
           <h1 className="mb-4 text-yellow-500">How it Works</h1>
           <p>Subscribe now, Get your website design Tomorrow!</p>
         </div>
@@ -213,24 +248,29 @@ const Hero = () => {
             the cybersecurity and infrastructure by reading Nextgen blog.
           </p>
         </div>
+        {/* this is blogs */}
         <div className="mt-8 grid w-full grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
-          {[1, 2, 3].map(() => (
+          {Array.isArray(blogData) && blogData.map((blog: Blog) => (
             <div
               key={Math.random()}
-              className="bg-blue- group relative flex flex-col hover:shadow-2xl shadow-blue-700 items-start gap-4 overflow-clip text-center duration-700"
+              className="bg-blue- group relative flex flex-col items-start gap-4 overflow-clip text-center shadow-blue-700 duration-700 hover:shadow-2xl"
             >
               <div className="relative min-h-72 w-full">
                 <Image
-                  src={blogExample.image}
+                  src={blog.banner.url || "/placeholder.svg"}
                   alt=""
                   className="object-cover"
                   fill
                 />
               </div>
-              <div className="absolute left-1/2 top-1/2 -z-10 size-4 -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-100 duration-700 group-hover:size-[720px]"></div>
-              <div className="px-8 p-4 text-start">
-              <h1 className="text-2xl">{blogExample.title}</h1>
-              <p>{blogExample.description}</p>
+              {/* <div className="absolute left-1/2 top-1/2 -z-10 size-4 -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-100 duration-700 group-hover:size-[720px]"/> */}
+              <div className="p-4 px-8 text-start">
+                <h1 className="text-2xl">{blog.title}</h1>
+                <p className="line-clamp-2">{blog.shortdescription}</p>
+              <Button asChild className="mt-4 bg-blue-700">
+                <Link href={"blog/"+blog.slug}>
+                  Read More</Link>
+              </Button>
               </div>
             </div>
           ))}
