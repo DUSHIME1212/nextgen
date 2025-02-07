@@ -35,7 +35,6 @@ const page = ({ params }: { params: any }) => {
         const { data }: { data: { data: Blog[] } } = await api.get(
           `/api/blogs?filters[slug][$eq]=${slug}&populate=*`
         );
-        console.log(data.data);
         setBlogData(data.data[0]);
       } catch (error) {
         console.error("Error fetching blog data:", error);
@@ -46,21 +45,16 @@ const page = ({ params }: { params: any }) => {
   }, [])
 
 
-  // const { data }: { data: { data: Blog[] } } = await api.get(
-  //   `/api/blogs?filters[slug][$eq]=${slug}&populate=*`
-  // );
 
-  // const res = data.data[0];
   if (!blogData) {
     return (
       <section className="min-h-screen flex items-center justify-center">
-        {/* creating a loading screen */}
         <AnimationScreen />
       </section>
     );
   }
 
-  console.log(blogData.banner.url);
+
 
 
   return (
@@ -81,17 +75,17 @@ const page = ({ params }: { params: any }) => {
           <h5 className="px-8 md:px-16 py-16">{blogData.shortdescription}</h5>
           <div className="px-8 md:px-16 py-16 flex flex-col gap-4">
             <p className="w-fit capitalize">
-              {/* date: {blogData.dateposted.replace("-", " ")} */}
+              date: {blogData.dateposted.replace("-", " ")}
             </p>
             <h4 className="w-full md:w-2/3">{blogData.title}</h4>
-            <h5 className="opacity-80">Author: {blogData.author}</h5>
+            <h5 className="opacity-80 capitalize">{blogData.author}</h5>
             <Link href={`mailto:${blogData.email}`} className="text-lg">
               {blogData.email}
             </Link>
           </div>
         </div>
         <div className="px-8 md:px-32 my-16 md:my-32 ">
-          <Markdown>{blogData.content}</Markdown>
+          <Markdown className={"prose prose-slate prose-img:w-full prose-img:object-cover prose-img:h-[400px]  lg:prose-2xl"}>{blogData.content}</Markdown>
         </div>
       </div>
     </section>

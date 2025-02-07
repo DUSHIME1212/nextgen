@@ -6,6 +6,16 @@ export default {
     content: ["./src/**/*.tsx"],
   theme: {
   	extend: {
+		typography: {
+			// DEFAULT: {
+			// 	css: {
+			// 		img: {
+			// 			height: '24rem', 
+			// 			width: 'auto',
+			// 		  },
+			// 	}
+			// }
+		},
   		fontFamily: {
   			sans: [
   				'var(--font-geist-sans)',
@@ -87,5 +97,8 @@ export default {
   		}
   	}
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [
+	require("tailwindcss-animate"),
+	require('@tailwindcss/typography'),
+],
 } satisfies Config;

@@ -90,9 +90,7 @@ const Hero = () => {
     async function fetchBlogData() {
       try {
         const { data } = await api.get("api/blogs?populate=*");
-        // console.log(data);
         setBlogData(data.data);
-        console.log(blogData);
         
         return data;
 
@@ -104,14 +102,12 @@ const Hero = () => {
     fetchBlogData();
   }, []);
 
-  console.log(blogData);
   if (!blogData) return <AnimationScreen/>;
   
 
 
   return (
     <>
-    {/* <AnimationScreen/> */}
       {/* first */}
       <div className="grid place-items-center md:min-h-screen">
         <div className="relative flex size-full h-screen flex-col items-start justify-center rounded-2xl p-16 px-8 text-left text-white md:px-16 lg:px-32">

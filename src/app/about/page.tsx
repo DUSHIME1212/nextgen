@@ -5,9 +5,7 @@ import { Animatepara } from "@/lib/Animation";
 import { api } from "@/lib/utils";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
-import axios from "axios";
 import AnimationScreen from "@/app/_components/AnimationScreen";
-import { setupCache } from 'axios-cache-interceptor';
 
 
 
@@ -22,7 +20,6 @@ const page = () => {
       getData();
     } catch (error) {}
   }, []);
-  console.log(teams);
 
   if(!teams){
   return <AnimationScreen />
