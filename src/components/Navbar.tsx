@@ -27,7 +27,7 @@ const Navbar = () => {
 
 
   return (
-    <nav className="fixed z-50 flex w-full items-center justify-between bg-white px-8 py-4 shadow-2xl shadow-blue-500/20 md:px-16 lg:px-32">
+    <nav className="fixed z-50 flex w-full items-center justify-between bg-white px-8 py-4 shadow-2xl shadow-blue-500/20 md:px-16">
       <Link href={"/"} className="flex items-center gap-2 text-2xl font-bold">
         <div className="relative w-8 h-8">
           <Image src="/logo.png" alt="Logo" className="object-contain" fill />
@@ -44,7 +44,7 @@ const Navbar = () => {
       <div
         className={`flex w-fit flex-col gap-4 bg-white max-md:hidden md:flex-row md:items-center`}
       >
-        {navlinks.map((link, index) => (
+        {/* {navlinks.map((link, index) => (
           <Link
             href={link.href}
             key={index}
@@ -52,12 +52,12 @@ const Navbar = () => {
           >
             <span className="links">{link.label}</span>
           </Link>
-        ))}
+        ))} */}
         <Button
           variant={"gooeyLeft"}
           className="bg-blue-700 from-blue-100 py-6 text-white"
         >
-          Start customizing
+          <Link href={"/contact"}>Contant us</Link>
         </Button>
       </div>
       {open && <div

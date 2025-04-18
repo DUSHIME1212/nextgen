@@ -8,7 +8,7 @@ const Footer = () => {
     <div className="flex min-h-fit w-full flex-col items-center bg-blue-700 text-white justify-start px-8 py-8 md:px-16">
       <div className="mb-16 grid w-full grid-cols-1  md:grid-cols-3 lg:grid-cols-5">
         <div className="pr-8 md:col-span-2 flex flex-col gap-4">
-          <h5 className="text-yellow-500">Logo Nextgen</h5>
+          <h5 className="text-yellow-500">Nextgen</h5>
           <p className="">
             Nextgen provides digital marketing solutions that are
             built to amplify your brand’s voice and expand your reach. We
