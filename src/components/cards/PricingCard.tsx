@@ -27,53 +27,6 @@ const PricingCard = ({
 }: PricingCardProps) => {
   const cardRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
-  
-  useEffect(() => {
-    if (!cardRef.current || !contentRef.current) return;
-    gsap.fromTo(
-      cardRef.current,
-      { y: 80, opacity: 0 },
-      { 
-        y: 0, 
-        opacity: 1, 
-        duration: 0.8, 
-        delay: index * 0.2,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: cardRef.current,
-          start: "top bottom-=100"
-        }
-      }
-    );
-    cardRef.current.addEventListener("mouseenter", () => {
-      gsap.to(cardRef.current, {
-        duration: 0.4,
-        boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.15)",
-        zIndex: 10
-      });
-      
-      if (popular) {
-        gsap.to(cardRef.current, { 
-          duration: 0.4
-        });
-      }
-    });
-    
-    cardRef.current.addEventListener("mouseleave", () => {
-      gsap.to(cardRef.current, { 
-        y: 0, 
-        duration: 0.4,
-        boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1)",
-        zIndex: popular ? 5 : 1
-      });
-      
-      if (popular) {
-        gsap.to(cardRef.current, {
-          duration: 0.4
-        });
-      }
-    });
-  }, [index, popular]);
 
   return (
     <div 

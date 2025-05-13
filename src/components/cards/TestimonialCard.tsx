@@ -25,45 +25,7 @@ const TestimonialCard = ({
 }: TestimonialCardProps) => {
   const cardRef = useRef<HTMLDivElement>(null);
   
-  useEffect(() => {
-    if (!cardRef.current) return;
-    gsap.fromTo(
-      cardRef.current,
-      { 
-        y: 60, 
-        opacity: 0,
-        scale: 0.95
-      },
-      { 
-        y: 0, 
-        opacity: 1,
-        scale: 1,
-        duration: 0.8,
-        delay: index * 0.15,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: cardRef.current,
-          start: "top bottom-=100"
-        }
-      }
-    );
-    
-    // Add hover animation
-    cardRef.current.addEventListener("mouseenter", () => {
-      gsap.to(cardRef.current, { 
-        duration: 0.3,
-        boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
-      });
-    });
-    
-    cardRef.current.addEventListener("mouseleave", () => {
-      gsap.to(cardRef.current, { 
-        y: 0, 
-        duration: 0.3,
-        boxShadow: "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)"
-      });
-    });
-  }, [index]);
+
   
   return (
     <div 

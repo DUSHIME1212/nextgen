@@ -10,11 +10,11 @@ const HeroPricing = () => {
     <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-200 rounded-full blur-3xl opacity-20 animate-pulse-soft bg-shape"></div>
     
     <div className="" ref={pricingRef}>
-      <div className="mb-20">
-        <div className="inline-block rounded-full bg-blue-200   px-4 py-1.5 text-sm font-medium text-blue-500   mb-4">
+      <div className="mb-20 space-y-4">
+        <div className="inline-block rounded-full bg-blue-200   px-4 py-1.5 text-sm font-medium text-blue-500 ">
           Pricing Plans
         </div>
-        <h2 className="section-title section-title-animation">
+        <h2 className="section-title">
           Transparent pricing for every need
         </h2>
         <p className="section-subtitle mx-auto">

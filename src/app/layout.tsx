@@ -4,6 +4,8 @@ import "@/styles/globals.css";
 import { GeistSans } from "geist/font/sans";
 import { type Metadata } from "next";
 import Footer from "./_components/Footer";
+import LenisScrollProvider from "./providers/lenis-provider";
+import { ScrollProgress } from "@/components/magicui/scroll-progress";
 
 export const metadata: Metadata = {
   title: "NextGen App",
@@ -17,13 +19,16 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${GeistSans.variable}`}>
       <body className="font-dmsans">
-        <header>
-          <Navbar />
-        </header>
-        {children}
-        <footer>
-          <Footer/>
-        </footer>
+        <LenisScrollProvider>
+          <ScrollProgress />
+          <header>
+            <Navbar />
+          </header>
+          {children}
+          <footer>
+            <Footer />
+          </footer>
+        </LenisScrollProvider>
       </body>
     </html>
   );
