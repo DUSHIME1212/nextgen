@@ -182,7 +182,7 @@ export default function TestimonialsSection() {
               disabled={isAnimating}
             >
               <ChevronRight className="h-5 w-5" />
-              <span className="sr-only">Next testimonial</span>
+              <span className="sr-only">Next testimonials</span>
             </button>
           </div>
         </div>
