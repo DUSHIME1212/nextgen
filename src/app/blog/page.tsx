@@ -37,7 +37,7 @@ const Page = async () => {
             {data.data.map((blog: Blog) => (
               <Link href={"blog/"+blog.slug} key={Math.random()}>
                 <div className="min-h-96 relative w-full">
-                    <Image src={blog.banner.url} alt="" fill className="object-cover rounded-xl"/>
+                    <Image src={blog.banner.url} alt="" fill className="object-cover -xl"/>
                 </div>
                 <div className="mt-8">
                 <h5>{blog.title}</h5>

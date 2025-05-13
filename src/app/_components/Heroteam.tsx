@@ -27,10 +27,10 @@ const Heroteam = () => {
                 <div className="grid w-full grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
                     {[...Array(4)].map((_, index) => (
                         <div key={index} className="min-h-96">
-                            <div className="relative h-96 w-full bg-gray-300 animate-pulse rounded-lg"></div>
+                            <div className="relative h-96 w-full bg-gray-300 animate-pulse -lg"></div>
                             <div className="flex flex-col border-none gap-4 p-4">
-                                <div className="h-6 w-3/4 bg-gray-300 animate-pulse rounded"></div>
-                                <div className="h-4 w-1/2 bg-gray-300 animate-pulse rounded"></div>
+                                <div className="h-6 w-3/4 bg-gray-300 animate-pulse "></div>
+                                <div className="h-4 w-1/2 bg-gray-300 animate-pulse "></div>
                             </div>
                         </div>
                     ))}

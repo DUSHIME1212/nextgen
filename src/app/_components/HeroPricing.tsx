@@ -7,14 +7,14 @@ const HeroPricing = () => {
   const pricingRef = React.useRef<HTMLDivElement>(null);
   return (
     <section className="py-24 relative overflow-hidden">
-    <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-200 rounded-full blur-3xl opacity-20 animate-pulse-soft bg-shape"></div>
+    <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-200 -full blur-3xl opacity-20 animate-pulse-soft bg-shape"></div>
     
     <div className="" ref={pricingRef}>
       <div className="mb-20 space-y-4">
-        <div className="inline-block rounded-full bg-blue-200   px-4 py-1.5 text-sm font-medium text-blue-500 ">
+        <div className="inline-block -full bg-blue-200   px-4 py-1.5 text-sm font-medium text-blue-500 ">
           Pricing Plans
         </div>
-        <h2 className="section-title">
+        <h2 className="section-title font-media md:w-2/3">
           Transparent pricing for every need
         </h2>
         <p className="section-subtitle mx-auto">

@@ -24,7 +24,9 @@ export default {
   			dmsans: [
   				'DM Sans',
   				'sans-serif'
-  			]
+  			],
+			media: ["Media Sans"],
+			BWMono: ["BWMono"],
   		},
   		borderRadius: {
   			lg: 'var(--radius)',

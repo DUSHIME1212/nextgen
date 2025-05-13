@@ -30,6 +30,7 @@ import HeroPricing from "./HeroPricing";
 import ServicesSection from "@/components/ServicesSection";
 import HeroGrid from "./HeroGrid";
 import Heroteam from "./Heroteam";
+import HeroWhatwedo from "./HeroWhatwedo";
 gsap.registerPlugin(ScrollTrigger);
 
 
@@ -143,6 +144,7 @@ const Hero = () => {
       {/* <MarqueeSection/> */}
       <HeroProjects/>
       <TestimonialsSection/>
+      <HeroWhatwedo/>
       <HeroPricing/>
       <div className="flex min-h-fit flex-col items-start justify-center py-16">
         <div className="flex w-2/3 flex-col items-start text-start">

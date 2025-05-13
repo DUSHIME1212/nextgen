@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Indie+Flower&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
+@import url('https://db.onlinewebfonts.com/c/112747c9d417f4ef9ebddd908a1394b7?family=Media+Sans');
+@import url("https://db.onlinewebfonts.com/c/7530efa05ae2cd26ccfa1e59112475bb?family=BWMono");
 
 @tailwind base;
 @tailwind components;
@@ -29,7 +32,7 @@
     --chart-3: 197 37% 24%;
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
-    --radius: 0.5rem
+    --radius: 0rem
   }
   .dark {
     --background: 240 10% 3.9%;
@@ -72,7 +75,7 @@
 }
 
 h1 {
-  @apply scroll-m-20 text-4xl md:text-6xl font-bold tracking-tight lg:text-7xl
+  @apply scroll-m-20 font-media text-4xl md:text-6xl font-bold tracking-tight lg:text-7xl
 }
 h2 {
   @apply  scroll-m-20 text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight transition-colors first:mt-0

@@ -14,10 +14,10 @@ const ServicesSection = () => {
     <section className="relative overflow-hidden bg-white py-24">
       <div className="">
         <div className="mb-16 space-y-4">
-          <div className="inline-block rounded-full bg-blue-200 px-4 py-1.5 text-sm font-medium text-blue-500">
+          <div className="inline-block -full bg-blue-200 px-4 py-1.5 text-sm font-medium text-blue-500">
             Our Services
           </div>
-          <h2 className="section-title ">
+          <h2 className="lg:w-2/3 font-media">
             Expert services for your digital needs
           </h2>
           <p className="section-subtitle mx-auto">
@@ -31,8 +31,8 @@ const ServicesSection = () => {
           ref={servicesRef}
           className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4"
         >
-          <div className="service-item rounded-lg border border-blue-200 bg-white p-6 shadow-sm transition-all duration-300 hover:border-primary/20 hover:shadow-md">
-            <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-lg bg-blue-200 text-blue-500">
+          <div className="service-item -lg border border-blue-200 bg-white p-6 shadow-sm transition-all duration-300 hover:border-primary/20 hover:shadow-md">
+            <div className="mb-6 flex h-12 w-12 items-center justify-center -lg bg-blue-200 text-blue-500">
               <Layout size={24} />
             </div>
             <h3 className="font-display mb-3 text-xl font-medium">
@@ -44,8 +44,8 @@ const ServicesSection = () => {
             </p>
           </div>
 
-          <div className="service-item rounded-lg border border-blue-200 bg-white p-6 shadow-sm transition-all duration-300 hover:border-primary/20 hover:shadow-md">
-            <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-lg bg-blue-200 text-blue-500">
+          <div className="service-item -lg border border-blue-200 bg-white p-6 shadow-sm transition-all duration-300 hover:border-primary/20 hover:shadow-md">
+            <div className="mb-6 flex h-12 w-12 items-center justify-center -lg bg-blue-200 text-blue-500">
               <Globe size={24} />
             </div>
             <h3 className="font-display mb-3 text-xl font-medium">
@@ -57,8 +57,8 @@ const ServicesSection = () => {
             </p>
           </div>
 
-          <div className="service-item rounded-lg border border-blue-200 bg-white p-6 shadow-sm transition-all duration-300 hover:border-primary/20 hover:shadow-md">
-            <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-lg bg-blue-200 text-blue-500">
+          <div className="service-item -lg border border-blue-200 bg-white p-6 shadow-sm transition-all duration-300 hover:border-primary/20 hover:shadow-md">
+            <div className="mb-6 flex h-12 w-12 items-center justify-center -lg bg-blue-200 text-blue-500">
               <Palette size={24} />
             </div>
             <h3 className="font-display mb-3 text-xl font-medium">
@@ -70,8 +70,8 @@ const ServicesSection = () => {
             </p>
           </div>
 
-          <div className="service-item rounded-lg border border-blue-200 bg-white p-6 shadow-sm transition-all duration-300 hover:border-primary/20 hover:shadow-md">
-            <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-lg bg-blue-200 text-blue-500">
+          <div className="service-item -lg border border-blue-200 bg-white p-6 shadow-sm transition-all duration-300 hover:border-primary/20 hover:shadow-md">
+            <div className="mb-6 flex h-12 w-12 items-center justify-center -lg bg-blue-200 text-blue-500">
               <Zap size={24} />
             </div>
             <h3 className="font-display mb-3 text-xl font-medium">

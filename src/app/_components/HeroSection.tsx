@@ -1,3 +1,4 @@
+import { Particles } from "@/components/magicui/particles";
 import { Button } from "@/components/ui/button";
 import { Animatepara } from "@/lib/Animation";
 import Image from "next/image";
@@ -5,7 +6,7 @@ import React from "react";
 
 const HeroSection = () => {
   return (
-    <div className="grid mt-8 place-items-center">
+    <div className="mt-8 grid place-items-center">
       <div className="relative flex flex-col items-start justify-center overflow-clip rounded-2xl p-16 px-8 text-left text-white md:px-16 lg:min-h-[520px] lg:px-32">
         <Image
           src={
@@ -19,7 +20,7 @@ const HeroSection = () => {
 
         <div>
           <div className="backdrop-blur- mb-10 rounded-lg p-8 lg:w-1/2">
-            <div className="z-10 ">
+            <div className="z-10">
               <h3 className="text-yellow-400 max-md:text-2xl">
                 Providing Full-Stack Development, Web Design & Branding
                 Solutions for an Effective Digital Experience
@@ -31,7 +32,7 @@ const HeroSection = () => {
                 your digital presence to the next level.
               </Animatepara>
             </div>
-            <h3 className="font-display mt-8 text-xl text-white">
+            <h3 className="font-display my-4 text-xl text-white">
               Technologies we master
             </h3>
             <div className="flex flex-wrap justify-start gap-3">
@@ -53,6 +54,11 @@ const HeroSection = () => {
                 </span>
               ))}
             </div>
+            <Particles
+              className="absolute inset-0 z-0"
+              quantity={100}
+              refresh
+            />
 
             <Button
               variant={"gooeyLeft"}

@@ -5,7 +5,7 @@ import { BsSlack, BsTwitterX } from "react-icons/bs";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa6";
 const Footer = () => {
   return (
-    <div className="flex min-h-fit w-full flex-col items-center bg-blue-700 text-white justify-start px-8 py-8 md:px-16">
+    <div className="flex sticky bottom-0 min-h-fit w-full flex-col items-center bg-blue-700 text-white justify-start px-8 py-8 md:px-16">
       <div className="mb-16 grid w-full grid-cols-1  md:grid-cols-3 lg:grid-cols-5">
         <div className="pr-8 md:col-span-2 flex flex-col gap-4">
           <h5 className="text-yellow-500">Nextgen</h5>

@@ -11,10 +11,10 @@ const HeroProjects = () => {
       <div className="">
         <div className="mb-16 flex flex-col md:flex-row md:items-end md:justify-between">
           <div className="space-y-4">
-            <div className="/10 inline-block rounded-full bg-blue-200 px-4 py-1.5 text-sm font-medium text-blue-500">
+            <div className="/10 inline-block -full bg-blue-200 px-4 py-1.5 text-sm font-medium text-blue-500">
               Featured Work
             </div>
-            <h2 className="section-title">Our latest projects</h2>
+            <h2 className="section-title font-media lg:w-2/3">Our latest projects</h2>
             <p className="section-subtitle">
               Explore our portfolio of innovative designs and creative solutions
               delivered for clients across various industries.

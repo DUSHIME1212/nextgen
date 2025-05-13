@@ -31,14 +31,14 @@ const PricingCard = ({
   return (
     <div 
       ref={cardRef}
-      className={`relative rounded-2xl border p-6 transition-all duration-300 ${popular ? 'border-primary/30 shadow-xl z-10' : 'border-gray-200 shadow-md'}`}
+      className={`relative -2xl border p-6 transition-all duration-300 ${popular ? 'border-primary/30 shadow-xl z-10' : 'border-gray-200 shadow-md'}`}
       style={{ 
         backgroundColor: popular ? `${color}05` : 'white',
         zIndex: popular ? 5 : 1 
       }}
     >
       {popular && (
-        <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-primary px-4 py-1 rounded-full text-white text-sm font-medium">
+        <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-primary px-4 py-1 -full text-white text-sm font-medium">
           Most Popular
         </div>
       )}
@@ -54,7 +54,7 @@ const PricingCard = ({
         <div className="space-y-3 mb-8">
           {features.map((feature, i) => (
             <div key={i} className="flex items-start">
-              <div className={`w-5 h-5 rounded-full ${color} flex items-center justify-center mr-3 mt-0.5 flex-shrink-0`}>
+              <div className={`w-5 h-5 -full ${color} flex items-center justify-center mr-3 mt-0.5 flex-shrink-0`}>
                 <Check size={12} className="text-white" />
               </div>
               <span>{feature}</span>
@@ -64,7 +64,7 @@ const PricingCard = ({
         
         <Link
           href="/contact"
-          className={`block w-full py-3 rounded-md text-center font-medium transition-colors ${
+          className={`block w-full py-3 -md text-center font-medium transition-colors ${
             popular 
               ? 'bg-primary text-white hover:bg-primary/90' 
               : 'bg-white border border-gray-300 hover:bg-gray-50'

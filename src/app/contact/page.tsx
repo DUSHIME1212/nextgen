@@ -48,7 +48,7 @@ const page = () => {
       <main className="pt-28 pb-24 px-8 md:px-16">
         <div className="">
           <div ref={headerRef} className="mb-16">
-            <div className="inline-block rounded-full bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary mb-4">
+            <div className="inline-block -full bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary mb-4">
               Get in Touch
             </div>
             <h1 className="section-title">
@@ -63,17 +63,17 @@ const page = () => {
             ref={contentRef}
             className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start"
           >
-            <div className="bg-white rounded-lg shadow-sm p-8 border border-dma-gray/20">
+            <div className="bg-white -lg shadow-sm p-8 border border-dma-gray/20">
               <h2 className="text-2xl font-display font-medium mb-6">Send us a message</h2>
               <ContactForm />
             </div>
             
-            <div className="bg-dma-light-gray rounded-lg p-8">
+            <div className="bg-dma-light-gray -lg p-8">
               <h2 className="text-2xl font-display font-medium mb-6">Contact information</h2>
               
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
-                  <div className="w-10 h-10 flex items-center justify-center rounded-full bg-primary/10 text-primary flex-shrink-0">
+                  <div className="w-10 h-10 flex items-center justify-center -full bg-primary/10 text-primary flex-shrink-0">
                     <MapPin size={20} />
                   </div>
                   <div>
@@ -84,7 +84,7 @@ const page = () => {
                 </div>
                 
                 <div className="flex items-start space-x-4">
-                  <div className="w-10 h-10 flex items-center justify-center rounded-full bg-primary/10 text-primary flex-shrink-0">
+                  <div className="w-10 h-10 flex items-center justify-center -full bg-primary/10 text-primary flex-shrink-0">
                     <Mail size={20} />
                   </div>
                   <div>
@@ -95,7 +95,7 @@ const page = () => {
                 </div>
                 
                 <div className="flex items-start space-x-4">
-                  <div className="w-10 h-10 flex items-center justify-center rounded-full bg-primary/10 text-primary flex-shrink-0">
+                  <div className="w-10 h-10 flex items-center justify-center -full bg-primary/10 text-primary flex-shrink-0">
                     <Phone size={20} />
                   </div>
                   <div>
@@ -113,7 +113,7 @@ const page = () => {
                     href="https://instagram.com"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-10 h-10 flex items-center justify-center rounded-full bg-white text-muted-foreground hover:text-primary transition-colors"
+                    className="w-10 h-10 flex items-center justify-center -full bg-white text-muted-foreground hover:text-primary transition-colors"
                   >
                     <Instagram size={20} />
                   </a>
@@ -121,7 +121,7 @@ const page = () => {
                     href="https://linkedin.com"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-10 h-10 flex items-center justify-center rounded-full bg-white text-muted-foreground hover:text-primary transition-colors"
+                    className="w-10 h-10 flex items-center justify-center -full bg-white text-muted-foreground hover:text-primary transition-colors"
                   >
                     <Linkedin size={20} />
                   </a>
