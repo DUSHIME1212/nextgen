@@ -92,7 +92,7 @@ export default function TestimonialsSection() {
           </h2>
           <p className="w-2/3 text-muted">
             We take pride in our work and the relationships we build with our
-            clients. Here’s what some of them have to say about their experience
+            clients. Here&apos;s what some of them have to say about their experience
             with us.
           </p>
         </div>
