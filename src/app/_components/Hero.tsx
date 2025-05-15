@@ -29,7 +29,7 @@ import TestimonialsSection from "@/components/TestimonialsSection";
 import HeroPricing from "./HeroPricing";
 import ServicesSection from "@/components/ServicesSection";
 import HeroGrid from "./HeroGrid";
-import Heroteam from "./Heroteam";
+import Heroteam, { Skeletondata } from "./Heroteam";
 import HeroWhatwedo from "./HeroWhatwedo";
 gsap.registerPlugin(ScrollTrigger);
 
@@ -134,19 +134,14 @@ const Hero = () => {
 
 
   return (
-    <section className="px-8 py-16 md:px-16">
-      {/* first */}
+    <section className="py-16">
       <HeroSection/>
-
-      
-          
       <ServicesSection/>
-      {/* <MarqueeSection/> */}
       <HeroProjects/>
       <TestimonialsSection/>
       <HeroWhatwedo/>
       <HeroPricing/>
-      <div className="flex min-h-fit flex-col items-start justify-center py-16">
+      <div className="flex min-h-fit flex-col items-start justify-center p-8 py-24 md:px-16 lg:px-32">
         <div className="flex w-2/3 flex-col items-start text-start">
           <h1 className="mb-4 w-full text-start md:w-1/3">Blog</h1>
           <p className="w-full lg:w-2/3">
@@ -155,8 +150,8 @@ const Hero = () => {
           </p>
         </div>
         <div className="mt-8 grid w-full grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
-          {Array.isArray(blogData) && blogData.map((blog: Blog) => (
-            <div
+          {Array.isArray(blogData) ? blogData.map((blog: Blog) => (
+            <Link href={"blog/"+blog.slug}
               key={Math.random()}
               className="bg-blue- group relative flex flex-col items-start gap-4 overflow-clip text-center  duration-700"
             >
@@ -171,13 +166,10 @@ const Hero = () => {
               <div className="p-4 px-8 text-start">
                 <h1 className="text-2xl min-h-20">{blog.title}</h1>
                 <p className="line-clamp-2">{blog.shortdescription}</p>
-              <Button asChild className="mt-4 bg-blue-700">
-                <Link href={"blog/"+blog.slug}>
-                  Read More</Link>
-              </Button>
               </div>
-            </div>
-          ))}
+            </Link>
+          )) : <Skeletondata/>
+        }
         </div>
       </div>
       <Heroteam/>

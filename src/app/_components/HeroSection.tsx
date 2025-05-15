@@ -6,8 +6,8 @@ import React from "react";
 
 const HeroSection = () => {
   return (
-    <div className="mt-8 grid place-items-center">
-      <div className="relative flex flex-col items-start justify-center overflow-clip rounded-2xl p-16 px-8 text-left text-white md:px-16 lg:min-h-[520px] lg:px-32">
+    <div className="mt-8 grid min-h-screen place-items-center">
+      <div className="relative size-full flex flex-col items-start justify-center overflow-clip  p-16 px-8 text-left text-white md:px-16 lg:min-h-[520px] lg:px-32">
         <Image
           src={
             "https://pbs.twimg.com/media/GedOxpSaEAAMnK3?format=jpg&name=large"
@@ -48,7 +48,7 @@ const HeroSection = () => {
               ].map((tech) => (
                 <span
                   key={tech}
-                  className="rounded-full border border-blue-500/20 bg-gradient-to-r from-yellow-500/20 to-yellow-700/10 px-3 py-1.5 text-sm font-medium text-yellow-500"
+                  className="rounded-full border border-blue-500/20 bg-gradient-to-r from-yellow-500/40 to-yellow-700/10 px-3 py-1.5 text-sm font-medium text-yellow-500"
                 >
                   {tech}
                 </span>
@@ -56,7 +56,7 @@ const HeroSection = () => {
             </div>
             <Particles
               className="absolute inset-0 z-0"
-              quantity={100}
+              quantity={1000}
               refresh
             />
 

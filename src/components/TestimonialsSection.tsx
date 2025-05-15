@@ -21,7 +21,7 @@ const testimonials: Testimonial[] = [
     avatar:
       "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop&crop=faces",
     content:
-      "My family and I had the most wonderful stay at MareSereno. The apartment was immaculate, with breathtaking sea views. The staff went above and beyond to make our vacation special.",
+      "The team transformed our outdated website into a sleek, user-friendly platform that perfectly reflects our brand identity. Their UX design and attention to detail boosted our customer engagement significantly.",
     rating: 5,
   },
   {
@@ -31,7 +31,7 @@ const testimonials: Testimonial[] = [
     avatar:
       "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=faces",
     content:
-      "Absolutely perfect location, steps away from the beach. The apartment had everything we needed and more. The modern amenities combined with the traditional coastal charm created a truly magical experience.",
+      "Their expertise in web development and brand strategy gave our business a stunning online presence. The custom-built website, paired with a cohesive brand identity, has elevated our market position.",
     rating: 5,
   },
   {
@@ -41,7 +41,7 @@ const testimonials: Testimonial[] = [
     avatar:
       "https://images.unsplash.com/photo-1569913486515-b74bf7751574?w=150&h=150&fit=crop&crop=faces",
     content:
-      "We spent a wonderful week at this beachfront paradise. The sunrise views from our terrace were worth the trip alone. Exceptionally clean and beautifully designed spaces.",
+      "We partnered with them for a complete brand overhaul and website redesign. The result was a visually striking, high-performing site that captures our brand essence and drives conversions.",
     rating: 4,
   },
 ];
@@ -80,8 +80,8 @@ export default function TestimonialsSection() {
   }, []);
 
   return (
-    <section className="grid bg-blue-500 overflow-hidden mb-8 text-white  p-20">
-      <div className="grid grid-cols-3 space-y-4">
+    <section className="grid lg:bg-blue-700 overflow-hidden mb-8 lg:text-white md:p-16 lg:p-32 ">
+      <div className="grid lg:grid-cols-3 space-y-4">
         <div className="pr-8 space-y-4">
           <div className="bg-yellow-500/20 inline-block rounded-full px-4 py-1.5 text-sm font-medium text-yellow-500">
           Client Testimonials
@@ -90,7 +90,7 @@ export default function TestimonialsSection() {
           <h2 className="my-4 text-yellow-500 font-media text-3xl font-bold md:text-4xl">
             What our People says about us
           </h2>
-          <p className="w-2/3 text-muted">
+          <p className="w-2/3 lg:text-muted">
             We take pride in our work and the relationships we build with our
             clients. Here&apos;s what some of them have to say about their experience
             with us.
@@ -98,7 +98,7 @@ export default function TestimonialsSection() {
         </div>
         </div>
 
-        <div className="relative col-span-2 w-full overflow-clip mx-auto">
+        <div className="relative h-fit lg:col-span-2 w-full overflow-clip mx-auto">
           <div className="relative mx-auto h-[400px] w-full md:h-[300px]">
             {testimonials.map((testimonial, index) => (
               <div
@@ -112,7 +112,7 @@ export default function TestimonialsSection() {
                       : "z-0 translate-x-full opacity-0",
                 )}
               >
-                <div className="flex h-full flex-col gap-6 md:flex-row">
+                <div className="flex h-full flex-col justify-center gap-6 md:flex-row">
                   <div className="flex flex-col items-center md:items-start">
                     <div className="mb-4 h-20 w-20 overflow-hidden rounded-full border-2 border-primary">
                       <img
@@ -138,7 +138,7 @@ export default function TestimonialsSection() {
                   </div>
 
                   <div className="flex flex-1 items-center">
-                    <blockquote  className="italic font-dmsans text-2xl text-muted">
+                    <blockquote  className="italic font-dmsans lg:text-2xl lg:text-muted">
                       "{testimonial.content}"
                     </blockquote>
                   </div>

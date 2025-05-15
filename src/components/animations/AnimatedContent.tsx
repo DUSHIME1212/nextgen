@@ -12,6 +12,7 @@ interface AnimatedContentProps {
   scale?: number;
   threshold?: number;
   delay?: number;
+  className?:string
 }
 
 const AnimatedContent: React.FC<AnimatedContentProps> = ({
@@ -25,6 +26,8 @@ const AnimatedContent: React.FC<AnimatedContentProps> = ({
   scale = 1,
   threshold = 0.1,
   delay = 0,
+  className,
+  ...props
 }) => {
   const [inView, setInView] = useState(false);
   const ref = useRef<HTMLDivElement | null>(null);
@@ -72,7 +75,7 @@ const AnimatedContent: React.FC<AnimatedContentProps> = ({
   });
 
   return (
-    <animated.div ref={ref} style={springProps}>
+    <animated.div className={className} ref={ref} style={springProps}>
       {children}
     </animated.div>
   );

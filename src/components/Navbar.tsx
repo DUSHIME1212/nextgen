@@ -56,8 +56,9 @@ const Navbar = () => {
         <Button
           variant={"gooeyLeft"}
           className="bg-blue-700 from-blue-100 py-6 text-white"
+          asChild
         >
-          <Link href={"/contact"}>Contant us</Link>
+          <Link href={"/contact"}>Contact us</Link>
         </Button>
       </div>
       {open && <div

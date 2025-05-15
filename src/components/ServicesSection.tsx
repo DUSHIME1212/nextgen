@@ -11,7 +11,7 @@ const ServicesSection = () => {
   const servicesRef = useRef<HTMLDivElement>(null);
 
   return (
-    <section className="relative overflow-hidden bg-white py-24">
+    <section className="relative overflow-hidden bg-white p-8 md:p-16 lg:p-32 py-24">
       <div className="">
         <div className="mb-16 space-y-4">
           <div className="inline-block -full bg-blue-200 px-4 py-1.5 text-sm font-medium text-blue-500">

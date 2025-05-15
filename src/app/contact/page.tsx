@@ -8,47 +8,14 @@ import ContactForm from "@/components/ContactForm";
 const page = () => {
   const headerRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
-  
-  useEffect(() => {
-    if (!headerRef.current || !contentRef.current) return;
-    
-    // Header animation
-    gsap.fromTo(
-      headerRef.current.children,
-      { y: 50, opacity: 0 },
-      {
-        y: 0,
-        opacity: 1,
-        duration: 0.8,
-        stagger: 0.2,
-        ease: "power3.out",
-      }
-    );
-    
-    // Content animation
-    gsap.fromTo(
-      contentRef.current.children,
-      { y: 50, opacity: 0 },
-      {
-        y: 0,
-        opacity: 1,
-        duration: 0.8,
-        stagger: 0.2,
-        ease: "power3.out",
-        delay: 0.3,
-      }
-    );
-    
-    // Scroll to top on page load
-    window.scrollTo(0, 0);
-  }, []);
+
 
   return (
     <>
       <main className="pt-28 pb-24 px-8 md:px-16">
         <div className="">
-          <div ref={headerRef} className="mb-16">
-            <div className="inline-block -full bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary mb-4">
+          <div ref={headerRef} className="mb-16 min-h-96 lg:bg-blue-700 text-blue-700 lg:text-white lg:p-32">
+            <div className="inline-block -full bg-primary/10 px-4 py-1.5 text-sm font-medium lg:text-accent mb-4">
               Get in Touch
             </div>
             <h1 className="section-title">
@@ -89,8 +56,8 @@ const page = () => {
                   </div>
                   <div>
                     <h3 className="font-medium mb-1">Email Us</h3>
-                    <p className="text-muted-foreground">hello@dma-agency.com</p>
-                    <p className="text-muted-foreground">info@dma-agency.com</p>
+                    <p className="text-muted-foreground">hello@nextgen.com</p>
+                    <p className="text-muted-foreground">info@nextgen.com</p>
                   </div>
                 </div>
                 
