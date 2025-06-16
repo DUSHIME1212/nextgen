@@ -22,17 +22,14 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${GeistSans.variable}`}>
       <body className="font-dmsans">
+        <LenisScrollProvider>
           <ScrollProgress />
-          {/* <Loader/> */}
-          {/* <header>
-            <Navbar />
-          </header> */}
+          <Loader />
+          <Navbar />
 
-          {children} 
-          <Footerv2/>
-          {/* <footer>
-            <Footer />
-          </footer> */}
+          {children}
+          <Footerv2 />
+        </LenisScrollProvider>
       </body>
     </html>
   );
