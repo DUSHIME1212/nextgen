@@ -8,6 +8,7 @@ import LenisScrollProvider from "./providers/lenis-provider";
 import { ScrollProgress } from "@/components/magicui/scroll-progress";
 import PageTransition from "@/components/animations/PageTransition";
 import Loader from "./_components/Loader";
+import Footerv2 from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "NextGen App",
@@ -21,20 +22,17 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${GeistSans.variable}`}>
       <body className="font-dmsans">
-        <LenisScrollProvider>
           <ScrollProgress />
-          <Loader/>
-          <header>
+          {/* <Loader/> */}
+          {/* <header>
             <Navbar />
-          </header>
-          <PageTransition>
+          </header> */}
 
           {children} 
-          </PageTransition>
-          <footer>
+          <Footerv2/>
+          {/* <footer>
             <Footer />
-          </footer>
-        </LenisScrollProvider>
+          </footer> */}
       </body>
     </html>
   );

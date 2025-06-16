@@ -1,84 +1,121 @@
-"use client"
+"use client";
 
-import { api } from '@/lib/utils';
-import Image from 'next/image';
-import React, { useEffect, useState } from 'react';
+import PixelCard from "@/components/cards/PixelCard";
+import { Skeleton } from "@/components/ui/skeleton";
+import { api } from "@/lib/utils";
+import { GetTeam } from "@/sanity/queries";
+import Image from "next/image";
+import React, { Suspense, useEffect, useState } from "react";
+import {
+  Linkedin,
+  Github,
+  Dribbble,
+  Twitter,
+  Globe,
+  Instagram,
+} from "lucide-react";
+
+import {
+  RiLinkedinFill,
+  RiGithubFill,
+  RiDribbbleLine,
+  RiTwitterFill,
+} from "react-icons/ri";
+import SpotlightCard from "@/components/cards/SpotlightCard";
+import { ZapIcon } from "lucide-react";
 
 const Heroteam = () => {
-    const [teams, setTeams] = useState<any[]>([]);
-    const [loading, setLoading] = useState(true);
+  const [teams, setTeams] = useState<any[]>([]);
+  const [loading, setLoading] = useState(true);
 
-    useEffect(() => {
-        try {
-            async function getData() {
-                const res = await api.get("/api/teams?populate=*");
-                setTeams(res.data.data);
-                setLoading(false);
-            }
-            getData();
-        } catch (error) {
-            setLoading(false);
-        }
-    }, []);
+  // Map social platforms to Lucide icons
+  const socialIcons: Record<
+    string,
+    React.ComponentType<{ className?: string }>
+  > = {
+    linkedin: RiLinkedinFill,
+    github: RiGithubFill,
+    dribbble: RiDribbbleLine,
+    twitter: RiTwitterFill,
+    portfolio: Globe,
+    behance: Globe,
+    other: Globe,
+  };
 
-    if (loading) {
-        return (
-            <div className="min-h-fit w-full p-8 bg-gradient-to-tr from-blue-500 to-blue-700 py-16 text-white py32 md:px-16">
-                <div className="grid w-full grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
-                    {[...Array(4)].map((_, index) => (
-                        <div key={index} className="min-h-96">
-                            <div className="relative h-96 w-full bg-gray-300 animate-pulse -lg"></div>
-                            <div className="flex flex-col border-none gap-4 p-4">
-                                <div className="h-6 w-3/4 bg-gray-300 animate-pulse "></div>
-                                <div className="h-4 w-1/2 bg-gray-300 animate-pulse "></div>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-            </div>
-        );
+  useEffect(() => {
+    try {
+      async function getData() {
+        const res = await GetTeam();
+        console.log(res);
+        setTeams(res);
+        setLoading(false);
+      }
+      getData();
+    } catch (error) {
+      setLoading(false);
     }
+  }, []);
 
-    return (
-        <div className="min-h-fit w-full p-8 bg-gradient-to-tr from-blue-500 to-blue-700 py-16 text-white py32 md:px-16">
-            <div className="grid w-full grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
-                {teams.map((team: any) => (
-                    <div key={team.id} className="min-h-96">
-                        <div className="relative h-96 w-full">
-                            <Image
-                                src={team.profile.url}
-                                alt={team.name}
-                                fill
-                                className="object-cover"
-                            />
-                        </div>
-                        <div className="flex flex-col border-none gap-4 p-4">
-                            <h2 className="text-xl font-semibold">{team.name}</h2>
-                            <p className="text-blue-100">{team.position}</p>
-                        </div>
-                    </div>
-                ))}
-            </div>
-        </div>
-    );
+  return (
+    <div className="py32 min-h-fit w-full p-8 py-16 text-white md:px-16 lg:px-32">
+      <div className="my-8 w-full flex flex-col items-center space-y-2 text-center">
+        <span className="flex items-center gap-2 text-yellow-500 border-2 border-yellow-500 bg-white/10 p-1 px-4">
+          <ZapIcon
+            className="-ms-0.5 opacity-60"
+            size={12}
+            aria-hidden="true"
+          />
+          Our Team
+        </span>
+        <h1 className="w-2/3 text-black">We are the people who make up Nextgen</h1>
+        <p className="w-2/3">
+          Our philosophy is simple, Hire great people and give them the
+          resources and support to do the best work
+        </p>
+      </div>
+      <div className="grid w-full grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-4">
+        {teams.map((team: any, index: number) => (
+          <Suspense fallback={<SkeletonTeamCard />} key={index}>
+            <SpotlightCard className="min-h-96 rounded-lg bg-blue-700 backdrop-blur-sm">
+              <div className="relative h-96 w-full overflow-hidden rounded-t-lg">
+                <Image
+                  src={team.profileImageUrl}
+                  alt={team.name}
+                  fill
+                  className="z-50 object-cover"
+                />
+              </div>
+              <div className="flex flex-col space-y-2 p-4">
+                <h2 className="text-xl font-semibold">{team.name}</h2>
+                <p className="text-blue-100">{team.role}</p>
+                <div className="flex gap-2">
+                  {team.socialLinks?.map((link: any, i: number) => {
+                    const IconComponent = socialIcons[link.platform] || Globe;
+                    return (
+                      <a
+                        key={i}
+                        href={link.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-white transition-colors hover:text-blue-200"
+                        aria-label={`${team.name}'s ${link.platform}`}
+                      >
+                        <IconComponent className="h-5 w-5 hover:text-yellow-500 duration-500" />
+                      </a>
+                    );
+                  })}
+                </div>
+              </div>
+            </SpotlightCard>
+          </Suspense>
+        ))}
+      </div>
+    </div>
+  );
 };
 
 export default Heroteam;
 
-export function Skeletondata() {
-    return(
-    <div className="min-h-fit w-full p-8 bg-gradient-to-tr from-blue-500 to-blue-700 py-16 text-white py32 md:px-16">
-                <div className="grid w-full grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
-                    {[...Array(4)].map((_, index) => (
-                        <div key={index} className="min-h-96">
-                            <div className="relative h-96 w-full bg-gray-300 animate-pulse -lg"></div>
-                            <div className="flex flex-col border-none gap-4 p-4">
-                                <div className="h-6 w-3/4 bg-gray-300 animate-pulse "></div>
-                                <div className="h-4 w-1/2 bg-gray-300 animate-pulse "></div>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-            </div>
-    )
+export function SkeletonTeamCard() {
+  return <Skeleton className="h-96 w-full" />;
 }

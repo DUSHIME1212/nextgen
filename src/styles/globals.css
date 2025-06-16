@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
 @import url('https://db.onlinewebfonts.com/c/112747c9d417f4ef9ebddd908a1394b7?family=Media+Sans');
 @import url("https://db.onlinewebfonts.com/c/7530efa05ae2cd26ccfa1e59112475bb?family=BWMono");
+@import url("https://db.onlinewebfonts.com/c/3b2646a48566403a55f62ceddbecbe18?family=Hiragino+Sans+GB+W3");
 
 @tailwind base;
 @tailwind components;
@@ -33,7 +34,15 @@
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
     --radius: 0rem
-  }
+  ;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%}
   .dark {
     --background: 240 10% 3.9%;
     --foreground: 0 0% 98%;
@@ -59,7 +68,15 @@
     --chart-3: 30 80% 55%;
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%
-  }
+  ;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%}
   .theme {
     --animate-marquee: marquee var(--duration) infinite linear;
     --animate-marquee-vertical: marquee-vertical var(--duration) linear infinite
@@ -75,7 +92,7 @@
 }
 
 h1 {
-  @apply scroll-m-20 font-media text-4xl md:text-6xl font-bold tracking-tight lg:text-7xl
+  @apply scroll-m-20 font-Hiragino text-4xl md:text-6xl font-bold tracking-tight lg:text-7xl
 }
 h2 {
   @apply  scroll-m-20 text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight transition-colors first:mt-0
