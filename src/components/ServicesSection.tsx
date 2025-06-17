@@ -11,13 +11,13 @@ const ServicesSection = () => {
   const servicesRef = useRef<HTMLDivElement>(null);
 
   return (
-    <section className="relative overflow-hidden bg-white p-8 md:p-16 lg:p-32 py-24">
+    <section className="relative overflow-hidden bg-white p-8 md:p-16 py-24">
       <div className="">
-        <div className="mb-16 space-y-4">
+        <div className="mb-16 space-y-4 flex flex-col items-center text-center">
           <div className="inline-block -full bg-blue-200 px-4 py-1.5 text-sm font-medium text-blue-500">
             Our Services
           </div>
-          <h2 className="lg:w-2/3 font-media">
+          <h2 className="lg:w-2/3">
             Expert services for your digital needs
           </h2>
           <p className="section-subtitle mx-auto">

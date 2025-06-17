@@ -2,10 +2,19 @@
 
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
+import { ShimmerButton } from './magicui/shimmer-button';
 
 export default function Footerv2() {
   return (
     <footer className=" px-4 bg-blue-700 text-yellow-500 md:px-8 py-16">
+      <div className='flex space-y-2 flex-col mb-16'>
+        <p>Let’s Create Something Better Together</p>
+        <h4>Write us on</h4>
+        <Link href={"/"} className='text-5xl'>hello@nextgen.digital</Link>
+        <ShimmerButton  className='size-fit bg-blue-500 shadow-2xl'>
+          Start a new project
+        </ShimmerButton>
+      </div>
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
         {/* Logo and Rating Section */}
         <div className="flex flex-col items-start">
@@ -27,7 +36,7 @@ export default function Footerv2() {
 
         {/* Social Links Section */}
         <div className="flex flex-col">
-          <h3 className="text-lg font-semibold mb-2">Social</h3>
+          <h3 className="text-lg font-semibold mb-2 mx-6">Social</h3>
           <ul className="space-y-2">
             <li><a href="#" className="hover:underline">Dribbble</a></li>
             <li><a href="#" className="hover:underline">Instagram</a></li>

@@ -143,7 +143,7 @@ const Hero = () => {
       <HeroPricing />
       <div className="flex min-h-fit flex-col items-start justify-center p-8 py-24 md:px-16 lg:px-32">
         <div className="flex w-full flex-col space-y-4 items-center text-center">
-          <span className="flex items-center gap-2 border-2 border-yellow-500 bg-white/10 p-1 px-4 text-yellow-500">
+          <span className="inline-flex items-center gap-2 bg-blue-200 px-4 py-1.5 text-sm font-medium text-blue-500">
             <ZapIcon
               className="-ms-0.5 opacity-60"
               size={12}
@@ -151,7 +151,7 @@ const Hero = () => {
             />
             Articles
           </span>
-          <h1 className="mb-4 w-full text-start md:w-2/3">
+          <h1 className="mb-4 w-full font-dmsans md:w-2/3">
             Insight and Updates
           </h1>
           <p className="w-full lg:w-2/3">

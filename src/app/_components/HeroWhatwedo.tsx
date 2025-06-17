@@ -1,6 +1,7 @@
 import AnimatedContent from "@/components/animations/AnimatedContent";
 import FadeContent from "@/components/animations/FadeContent";
 import React from "react";
+import { RiVerifiedBadgeFill } from "react-icons/ri";
 
 const services = [
   {
@@ -65,14 +66,15 @@ const services = [
 const HeroWhatwedo = () => {
   return (
     <div className="space-y-16 p-8 md:px-16 lg:px-32">
-      <div className="mb-20 space-y-4">
-        <div className="inline-block -full bg-blue-200 px-4 py-1.5 text-sm font-medium text-blue-500">
+      <div className="mb-20 flex flex-col space-y-2 items-center text-center">
+        <div className="inline-flex items-center gap-2 bg-blue-200 px-4 py-1.5 text-sm font-medium text-blue-500">
+          <RiVerifiedBadgeFill/>
           What we do
         </div>
-        <h2 className="section-title md:w-2/3 font-media">
+        <h2 className="md:w-2/3 font-dmsans">
           Expert services for your digital needs
         </h2>
-        <p className="section-subtitle mx-auto">
+        <p className="mx-auto md:w-2/3">
           We combine creativity with technical expertise to deliver exceptional
           digital experiences that elevate your brand and engage your audience.
         </p>
@@ -83,20 +85,20 @@ const HeroWhatwedo = () => {
             <AnimatedContent direction="horizontal" reverse delay={index * 0.9} className="relative">
               <img  src={item.img} className="size-full object-cover max-h-96 bg-gray-700" />
             </AnimatedContent>
-            <div className="flex flex-col ju">
+            <div className="flex flex-col justify-center">
               <div className="font-display mb-3 inline-flex items-center gap-4 text-xl font-medium">
-                <span className="">[ {index + 1} ]</span>
-                <h4 className="font-media text-xl font-thin">
+                {/* <span className="">[ {index + 1} ]</span> */}
+                <h4 className="font-dmsans text-xl ">
                   {item.title}
                 </h4>
               </div>
               <p className="text-muted-foreground">
                 {item.description}
               </p>
-              <div className="flex text-sm w-full flex-wrap  my-16 gap-2">
+              <div className="flex text-sm w-full mt-4 flex-wrap gap-2">
                 {
                 item.features.map((feature, i) => (
-                  <span className="w-fit p-2" key={i}>{feature}</span>
+                  <span className="w-fit p-2 font-light inline-flex items-center gap-2 duration-300 cursor-pointer hover:bg-blue-200 px-4 py-1.5 text-sm text-blue-500" key={i}>{feature}</span>
                 ))}
               </div>
             </div>

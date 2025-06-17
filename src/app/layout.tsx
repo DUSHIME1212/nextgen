@@ -24,7 +24,7 @@ export default function RootLayout({
       <body className="font-dmsans">
         <LenisScrollProvider>
           <ScrollProgress />
-          <Loader />
+          {/* <Loader /> */}
           <Navbar />
 
           {children}
