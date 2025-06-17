@@ -7,7 +7,8 @@ import React from "react";
 
 const HeroSection = () => {
   return (
-    <div className="mt-8 grid min-h-screen lg:grid-cols-2">
+    <div className="grid min-h-screen relative lg:grid-cols-2">
+      <Particles className="absolute inset-0 z-10" quantity={1000} refresh />
       <div className="relative h-screen">
         <Image
           src={
@@ -17,7 +18,7 @@ const HeroSection = () => {
           alt=""
           className="w-full object-cover"
         />
-        <Particles className="absolute inset-0 z-0" quantity={1000} refresh />
+        
       </div>
       <div className="relative flex size-full flex-col items-start justify-center overflow-clip bg-blue-700 px-8 text-left text-white md:px-16">
         <div>

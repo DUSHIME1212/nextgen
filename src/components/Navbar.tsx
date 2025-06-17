@@ -9,6 +9,7 @@ import { IoClose } from "react-icons/io5";
 import { MenuIcon } from "lucide-react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import { ShimmerButton } from "./magicui/shimmer-button";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -24,8 +25,8 @@ const Navbar = () => {
     });
   });
 
-  const navRef = useRef<HTMLElement>(null); 
-  const lastScrollY = useRef(0); 
+  const navRef = useRef<HTMLElement>(null);
+  const lastScrollY = useRef(0);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -39,8 +40,6 @@ const Navbar = () => {
         // At top (within 50px)
         gsap.to(nav, {
           y: 0,
-          backgroundColor: "rgba(0, 0, 0, 0.05)",
-        //   backdropFilter: "blur(8px)",
           duration: 0.3,
           ease: "power2.out",
         });
@@ -54,9 +53,7 @@ const Navbar = () => {
       } else {
         // Scrolling up
         gsap.to(nav, {
-          y: 0, // Show nav
-          backgroundColor: "rgba(0, 0, 0, 0.2)",
-          backdropFilter: "blur(8px)",
+          y: 0,
           duration: 0.3,
           ease: "power2.out",
         });
@@ -74,7 +71,7 @@ const Navbar = () => {
   return (
     <nav
       ref={navRef}
-      className="fixed z-50 flex w-full items-center justify-between bg-white px-8 py-4 shadow-2xl shadow-blue-500/20 md:px-16"
+      className="fixed z-50 flex w-full items-center justify-between bg-white px-8 py-2 shadow-2xl shadow-blue-500/20 md:px-16"
     >
       <Link href={"/"} className="flex items-center gap-2 text-2xl font-bold">
         <div className="relative h-8 w-8">
@@ -101,13 +98,14 @@ const Navbar = () => {
             <span className="links">{link.label}</span>
           </Link>
         ))} */}
-        <Button
-          variant={"gooeyLeft"}
-          className="bg-blue-700 from-blue-100 py-6 text-white"
-          asChild
+        <ShimmerButton
+          shimmerColor="#facc15"
+          background="#1d4ed8"
+          shimmerSize="0.2rem"
+          className="rounded-lg text-yellow-500"
         >
           <Link href={"/contact"}>Contact us</Link>
-        </Button>
+        </ShimmerButton>
       </div>
       {open && (
         <div
