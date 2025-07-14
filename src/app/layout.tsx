@@ -11,9 +11,9 @@ import Loader from "./_components/Loader";
 import Footerv2 from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "NextGen App",
+  title: "NextGen devs",
   description: "A modern web application",
-  icons: [{ rel: "icon", url: "/logo.png" }],
+  icons: [{ rel: "icon", url: "/logo/logo.png" }],
 };
 
 export default function RootLayout({
@@ -24,7 +24,7 @@ export default function RootLayout({
       <body className="font-dmsans">
         <LenisScrollProvider>
           <ScrollProgress />
-          <Loader />
+          {/* <Loader /> */}
           <Navbar />
 
           {children}

@@ -1,26 +1,27 @@
-'use client';
+"use client";
 
-import { Button } from '@/components/ui/button';
-import Link from 'next/link';
-import { ShimmerButton } from './magicui/shimmer-button';
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
+import { ShimmerButton } from "./magicui/shimmer-button";
 
 export default function Footerv2() {
   return (
-    <footer className=" px-4 bg-blue-700 text-yellow-500 md:px-8 py-16">
-      <div className='flex space-y-2 flex-col mb-16'>
+    <footer className="bg-black px-4 py-16 text-gray-500 md:px-8">
+      <div className="mb-16 flex flex-col space-y-2">
         <p>Let’s Create Something Better Together</p>
         <h4>Write us on</h4>
-        <Link href={"/"} className='text-5xl'>hello@nextgen.digital</Link>
-        <ShimmerButton  className='size-fit bg-blue-500 shadow-2xl'>
+        <Link href={"/"} className="text-5xl">
+          hello@nextgen.digital
+        </Link>
+        <ShimmerButton className="size-fit bg-blue-500 shadow-2xl">
           Start a new project
         </ShimmerButton>
       </div>
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-8 md:grid-cols-3">
         {/* Logo and Rating Section */}
-        <div className="flex flex-col items-start">
-          <div className="flex items-center gap-2 mb-2">
-           <img src="/logo.png" alt="" className='size-8' />
-            <span className="text-xl text-white font-bold">Nextgen</span>
+        <div className="flex flex-col  space-y-2 items-start">
+          <div className="mb-2 flex items-center gap-2">
+            <img src="/logo/Logo-4.png" alt="" className="w-32" />
           </div>
           <p className="text-lg font-semibold">5.0</p>
           <p className="text-sm">Rated by our customers</p>
@@ -28,7 +29,7 @@ export default function Footerv2() {
 
         {/* Location Section */}
         <div className="flex flex-col">
-          <h3 className="text-lg font-semibold mb-2">Location</h3>
+          <h3 className="mb-2 text-lg font-semibold">Location</h3>
           <p className="mb-4">Rwanda</p>
           <p>100% Remote Team</p>
           <p className="mt-4">Kigali</p>
@@ -36,29 +37,64 @@ export default function Footerv2() {
 
         {/* Social Links Section */}
         <div className="flex flex-col">
-          <h3 className="text-lg font-semibold mb-2 mx-6">Social</h3>
+          <h3 className="mx-6 mb-2 text-lg font-semibold">Social</h3>
           <ul className="space-y-2">
-            <li><a href="#" className="hover:underline">Dribbble</a></li>
-            <li><a href="#" className="hover:underline">Instagram</a></li>
-            <li><a href="#" className="hover:underline">Behance</a></li>
-            <li><a href="#" className="hover:underline">LinkedIn</a></li>
-            <li><a href="#" className="hover:underline">Facebook</a></li>
-            <li><a href="#" className="hover:underline">Clutch</a></li>
+            <li>
+              <a href="#" className="hover:underline">
+                Dribbble
+              </a>
+            </li>
+            <li>
+              <a href="#" className="hover:underline">
+                Instagram
+              </a>
+            </li>
+            <li>
+              <a href="#" className="hover:underline">
+                Behance
+              </a>
+            </li>
+            <li>
+              <a href="#" className="hover:underline">
+                LinkedIn
+              </a>
+            </li>
+            <li>
+              <a href="#" className="hover:underline">
+                Facebook
+              </a>
+            </li>
+            <li>
+              <a href="#" className="hover:underline">
+                Clutch
+              </a>
+            </li>
           </ul>
         </div>
       </div>
 
       {/* Navigation and Copyright */}
-      <div className="max-w-7xl mx-auto mt-8 flex flex-col md:flex-row justify-between items-center border-t border-yellow-500 pt-4">
-        <div className="flex space-x-4 mb-4 md:mb-0">
-          <Button variant="link" className="text-white hover:text-gray-300">About Us</Button>
-          <Button variant="link" className="text-white hover:text-gray-300">Case Study</Button>
-          <Button variant="link" className="text-white hover:text-gray-300">Contact</Button>
+      <div className="mx-auto mt-8 flex max-w-7xl flex-col items-center justify-between border-t border-gray-500 pt-4 md:flex-row">
+        <div className="mb-4 flex space-x-4 md:mb-0">
+          <Button variant="link" className="text-white hover:text-gray-300">
+            About Us
+          </Button>
+          <Button variant="link" className="text-white hover:text-gray-300">
+            Case Study
+          </Button>
+          <Button variant="link" className="text-white hover:text-gray-300">
+            Contact
+          </Button>
         </div>
         <p className="text-sm">
-          powered by - <a href="#" className="hover:underline">Nextgen developers rw</a>
+          powered by -{" "}
+          <a href="#" className="hover:underline">
+            Nextgen developers rw
+          </a>
         </p>
-        <p className="text-sm mt-2 md:mt-0">© 2023 Nextgen Digital - All rights Reserved</p>
+        <p className="mt-2 text-sm md:mt-0">
+          © 2023 Nextgen Digital - All rights Reserved
+        </p>
       </div>
     </footer>
   );

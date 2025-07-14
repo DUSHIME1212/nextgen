@@ -28,7 +28,7 @@ const HeroPricing = () => {
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
           <PricingCard
             title="Basic"
-            price="500,000 rwf"
+            price="1,000,000 rwf"
             description="Perfect for small businesses looking to establish their online presence."
             features={[
               "Simple website design",
@@ -44,7 +44,7 @@ const HeroPricing = () => {
 
           <PricingCard
             title="Professional"
-            price="800,000 rwf"
+            price="2,000,000 rwf"
             description="Ideal for growing businesses that need comprehensive digital solutions."
             features={[
               "Custom website design",

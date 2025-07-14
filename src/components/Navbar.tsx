@@ -75,7 +75,7 @@ const Navbar = () => {
     >
       <Link href={"/"} className="flex items-center gap-2 text-2xl font-bold">
         <div className="relative h-8 w-8">
-          <Image src="/logo.png" alt="Logo" className="object-contain" fill />
+          <Image src="/logo/logo.png" alt="Logo" className="object-contain" fill />
         </div>
         Nextgen
       </Link>
@@ -99,10 +99,10 @@ const Navbar = () => {
           </Link>
         ))} */}
         <ShimmerButton
-          shimmerColor="#facc15"
-          background="#1d4ed8"
+          shimmerColor="#fff"
+          background="#000"
           shimmerSize="0.2rem"
-          className="rounded-lg text-yellow-500"
+          className="rounded-lg text-white"
         >
           <Link href={"/contact"}>Contact us</Link>
         </ShimmerButton>
@@ -123,7 +123,7 @@ const Navbar = () => {
           ))}
           <Button
             variant={"gooeyLeft"}
-            className="bg-blue-700 from-blue-100 py-6 text-white"
+            className="py-6 text-white"
           >
             Start customizing
           </Button>

@@ -57,9 +57,9 @@ const Heroteam = () => {
   }, []);
 
   return (
-    <div className="py32 min-h-fit w-full p-8 py-16 text-white md:px-16 lg:px-32">
+    <div className="py32 min-h-fit w-full p-8 py-16 text-white md:px-16 lg:px">
       <div className="my-8 w-full flex flex-col items-center space-y-2 text-center">
-        <span className="inline-flex items-center gap-2 bg-blue-200 px-4 py-1.5 text-sm font-medium text-blue-500">
+        <span className="inline-flex items-center gap-2 bg-gray-200 px-4 py-1.5 text-sm font-medium text-gray-500">
           <ZapIcon
             className="-ms-0.5 opacity-60"
             size={12}

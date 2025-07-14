@@ -49,25 +49,29 @@ const HeroProjects = () => {
 
         <div
           ref={projectsRef}
-          className="grid grid-cols-1 size-full gap-8 md:grid-cols-2"
+          className="grid size-full grid-cols-1 gap-8 md:grid-cols-2"
         >
           {projects.map((project, index) => (
-              <div key={index} className="relative h-[90vh]">
-                <div className="absolute z-10 size-full bg-gradient-to-b from-40% from-transparent to-white"/>
-                <div className="flex flex-col z-10 bottom-0 p-8 space-y-2 absolute w-full justify-between">
-                  <h5>{project.title}</h5>
-                  <p className="line-clamp-3">{project.description}</p>
-                  <Button asChild variant={"gooeyLeft"} className="w-fit bg-blue-700">
-                    <Link href={"projects" + project?.slug}>Case study</Link>
-                  </Button>
-                </div>
-                <Image
-                  fill
-                  src={project.heroImage}
-                  className=" object-cover top-0"
-                  alt=""
-                />
+            <div key={index} className="relative h-[90vh]">
+              <div className="absolute z-10 size-full bg-gradient-to-b from-transparent from-30% to-black/50" />
+              <div className="absolute bottom-0 z-10 flex w-full text-white flex-col justify-between space-y-2 p-8">
+                <h5>{project.title}</h5>
+                <p className="line-clamp-3">{project.description}</p>
+                <Button
+                  asChild
+                  variant={"gooeyLeft"}
+                  className="w-fit bg-blue-700"
+                >
+                  <Link href={"projects/" + project?.slug.current}>Case study</Link>
+                </Button>
               </div>
+              <Image
+                fill
+                src={project.heroImage}
+                className="top-0 object-cover"
+                alt=""
+              />
+            </div>
           ))}
         </div>
       </div>
